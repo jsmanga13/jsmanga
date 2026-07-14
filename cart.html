@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poster — JSMANGA</title>
+<title>Cart — JSMANGA</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
     </a>
     <div class="navlinks">
       <a href="index.html">Home</a>
-      <a href="shop.html" class="active">Shop</a>
+      <a href="shop.html">Shop</a>
       <a href="commission.html">Commission</a>
       <a href="reviews.html">Reviews</a>
       <a href="about.html">About</a>
@@ -32,48 +32,19 @@
   </div>
 </nav>
 
-<div class="wrap" data-product-page>
-  <div class="product-layout">
-
-    <div class="product-frame viewframe">
-      <span class="vf-tr"></span><span class="vf-bl"></span>
-      <div class="poster-art" style="height:100%; aspect-ratio:auto;">
-        <img class="poster-img" data-p-img src="" alt="">
-        <span class="sku mono" data-p-sku></span>
-      </div>
-    </div>
-
-    <div class="product-info">
-      <span class="kicker" data-p-kicker></span>
-      <h1 data-p-title></h1>
-      <span class="product-price" data-p-price></span>
-      <p class="product-desc" data-p-desc></p>
-
-      <div class="product-actions">
-        <button type="button" class="btn" data-add-to-cart-btn data-add-to-cart="">Add to cart</button>
-        <a href="reviews.html" class="btn ghost">Read the review</a>
-      </div>
-
-      <div class="specs">
-        <div class="spec-row"><span>Size</span><span class="mono">18 × 24 in</span></div>
-        <div class="spec-row"><span>Paper</span><span class="mono">200gsm matte archival</span></div>
-        <div class="spec-row"><span>Edition</span><span class="mono">Open — reprinted on order</span></div>
-        <div class="spec-row"><span>Ships</span><span class="mono">3–5 business days</span></div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<section class="section">
+<header class="page-hero">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="tag">003 / Related</span>
-        <h2>You might also like</h2>
-      </div>
+    <span class="tag">Your Cart</span>
+    <h1>Everything you've picked so far.</h1>
+  </div>
+</header>
+
+<section class="section" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="cart-layout">
+      <div data-cart-items></div>
+      <div class="cart-summary" data-cart-summary></div>
     </div>
-    <div class="grid" data-related-grid></div>
   </div>
 </section>
 

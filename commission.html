@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commission a Poster — JSMANGA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
+      JSMANGA<span class="brand-accent">poster</span>
+    </a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="commission.html" class="active">Commission</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-search">
+      <input type="search" placeholder="Search posters…" data-search-input autocomplete="off">
+      <div class="search-results" data-search-results></div>
+    </div>
+    <a href="cart.html" class="nav-cta">
+      <span class="vheart"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
+      <span class="cart-label">Cart (<span class="cart-count">0</span>)</span>
+    </a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="tag">Custom / Commission</span>
+    <h1>Get your own panel, framed.</h1>
+  </div>
+</header>
+
+<section class="section" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="product-layout" style="align-items:start;">
+      <div class="prose">
+        <p>
+          Want a print that's not in the shop yet? Send over the series,
+          chapter, or exact panel you have in mind and we'll quote a
+          one-off reprint — same 200gsm matte archival stock as everything
+          else in the shop.
+        </p>
+        <p>
+          Commissions are reprints of existing panels and covers, not new
+          fan art commissioned from an artist — so turnaround is close to
+          a normal order once we track down a clean source file.
+        </p>
+        <div class="specs">
+          <div class="spec-row"><span>Turnaround</span><span class="mono">5–10 business days</span></div>
+          <div class="spec-row"><span>Sizes</span><span class="mono">18×24, 24×36, or custom</span></div>
+          <div class="spec-row"><span>Deposit</span><span class="mono">Not required to request a quote</span></div>
+        </div>
+      </div>
+
+      <form data-commission-form>
+        <div class="field">
+          <label for="c-name">Name</label>
+          <input id="c-name" name="name" type="text" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input id="c-email" name="email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="c-size">Size</label>
+            <select id="c-size" name="size">
+              <option value="18×24 in">18 × 24 in</option>
+              <option value="24×36 in">24 × 36 in</option>
+              <option value="Custom size">Custom size</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="c-reference">Series / character / scene</label>
+          <input id="c-reference" name="reference" type="text" placeholder="e.g. Blue Lock — Ch. 200 cover" required>
+        </div>
+        <div class="field">
+          <label for="c-budget">Budget (optional)</label>
+          <input id="c-budget" name="budget" type="text" placeholder="e.g. around $30">
+        </div>
+        <div class="field">
+          <label for="c-details">Details</label>
+          <textarea id="c-details" name="details" placeholder="Any specifics on the panel, color pass, or framing you want"></textarea>
+        </div>
+        <button type="submit" class="btn">Send commission request →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
+        JSMANGA<span class="brand-accent">poster</span>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="shop.html">All posters</a>
+          <a href="commission.html">Commission a poster</a>
+        </div>
+        <div class="footer-col">
+          <h4>Read</h4>
+          <a href="reviews.html">Reviews</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <a href="about.html">Shipping</a>
+          <a href="about.html">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JSMANGA. All posters are fan-made, original-design prints unless noted.</span>
+      <span>Made with a vector star.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

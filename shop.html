@@ -17,12 +17,17 @@
     <div class="navlinks">
       <a href="index.html">Home</a>
       <a href="shop.html" class="active">Shop</a>
+      <a href="commission.html">Commission</a>
       <a href="reviews.html">Reviews</a>
       <a href="about.html">About</a>
     </div>
-    <a href="shop.html" class="nav-cta">
+    <div class="nav-search">
+      <input type="search" placeholder="Search posters…" data-search-input autocomplete="off">
+      <div class="search-results" data-search-results></div>
+    </div>
+    <a href="cart.html" class="nav-cta">
       <span class="vheart"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      Cart (0)
+      <span class="cart-label">Cart (<span class="cart-count">0</span>)</span>
     </a>
   </div>
 </nav>
@@ -46,120 +51,159 @@
 
     <div class="grid">
 
-      <a href="product.html" class="poster-card viewframe" data-category="shounen">
+      <a href="product.html?slug=one-piece-east-blue-crew" class="poster-card viewframe" data-category="shounen">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/crew-story.jpg" alt="One Piece — East Blue Crew poster" loading="lazy"><span class="sku mono">SKU-104</span></div>
         <div class="poster-body">
           <div class="poster-title">One Piece — East Blue Crew</div>
-          <div class="poster-meta"><span class="price">$32.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$32.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="one-piece-east-blue-crew">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="shounen">
+      <a href="product.html?slug=one-piece-wano-gear-5" class="poster-card viewframe" data-category="shounen">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/natsuba.jpg" alt="One Piece — Wano, Gear 5 poster" loading="lazy"><span class="sku mono">SKU-105</span></div>
         <div class="poster-body">
           <div class="poster-title">One Piece — Wano, Gear 5</div>
-          <div class="poster-meta"><span class="price">$34.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$34.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="one-piece-wano-gear-5">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="shoujo">
+      <a href="product.html?slug=kaoru-hana-vol-4" class="poster-card viewframe" data-category="shoujo">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/4.jpg" alt="Kaoru Hana wa Rin to Saku — Vol. 4 Cover poster" loading="lazy"><span class="sku mono">SKU-101</span></div>
         <div class="poster-body">
           <div class="poster-title">Kaoru Hana wa Rin to Saku — Vol. 4</div>
-          <div class="poster-meta"><span class="price">$28.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$28.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="kaoru-hana-vol-4">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="shoujo">
+      <a href="product.html?slug=kaoru-hana-meeting-family" class="poster-card viewframe" data-category="shoujo">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/meeting.jpg" alt="Kaoru Hana wa Rin to Saku — Meeting the Family poster" loading="lazy"><span class="sku mono">SKU-102</span></div>
         <div class="poster-body">
           <div class="poster-title">Kaoru Hana wa Rin to Saku — Meeting the Family</div>
-          <div class="poster-meta"><span class="price">$26.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$26.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="kaoru-hana-meeting-family">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="shoujo">
+      <a href="product.html?slug=kaoru-hana-kaoruko-waguri" class="poster-card viewframe" data-category="shoujo">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/r2.jpg" alt="Kaoru Hana wa Rin to Saku — Kaoruko Waguri poster" loading="lazy"><span class="sku mono">SKU-103</span></div>
         <div class="poster-body">
           <div class="poster-title">Kaoru Hana wa Rin to Saku — Kaoruko Waguri</div>
-          <div class="poster-meta"><span class="price">$30.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$30.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="kaoru-hana-kaoruko-waguri">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="shounen">
+      <a href="product.html?slug=reborn-vongola-ensemble" class="poster-card viewframe" data-category="shounen">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/overdfue.jpg" alt="Katekyo Hitman Reborn! — Vongola Ensemble poster" loading="lazy"><span class="sku mono">SKU-106</span></div>
         <div class="poster-body">
           <div class="poster-title">Katekyo Hitman Reborn! — Vongola Ensemble</div>
-          <div class="poster-meta"><span class="price">$29.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$29.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="reborn-vongola-ensemble">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="shounen">
+      <a href="product.html?slug=reborn-battle-colors" class="poster-card viewframe" data-category="shounen">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/r1.jpg" alt="Katekyo Hitman Reborn! — Battle Colors poster" loading="lazy"><span class="sku mono">SKU-107</span></div>
         <div class="poster-body">
           <div class="poster-title">Katekyo Hitman Reborn! — Battle Colors</div>
-          <div class="poster-meta"><span class="price">$27.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$27.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="reborn-battle-colors">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="shounen">
+      <a href="product.html?slug=soul-eater-death-the-kid" class="poster-card viewframe" data-category="shounen">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/rinka.jpg" alt="Soul Eater — Death the Kid poster" loading="lazy"><span class="sku mono">SKU-108</span></div>
         <div class="poster-body">
           <div class="poster-title">Soul Eater — Death the Kid</div>
-          <div class="poster-meta"><span class="price">$25.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$25.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="soul-eater-death-the-kid">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="shounen">
+      <a href="product.html?slug=soul-eater-weapon-ensemble" class="poster-card viewframe" data-category="shounen">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/soulll.jpg" alt="Soul Eater — Weapon Ensemble poster" loading="lazy"><span class="sku mono">SKU-109</span></div>
         <div class="poster-body">
           <div class="poster-title">Soul Eater — Weapon Ensemble</div>
-          <div class="poster-meta"><span class="price">$25.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$25.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="soul-eater-weapon-ensemble">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="shounen">
+      <a href="product.html?slug=beelzebub-jump-comics-cover" class="poster-card viewframe" data-category="shounen">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/beel.jpg" alt="Beelzebub — Jump Comics Cover poster" loading="lazy"><span class="sku mono">SKU-110</span></div>
         <div class="poster-body">
           <div class="poster-title">Beelzebub — Jump Comics Cover</div>
-          <div class="poster-meta"><span class="price">$26.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$26.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="beelzebub-jump-comics-cover">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="seinen">
+      <a href="product.html?slug=billy-bat-blue-island-blues" class="poster-card viewframe" data-category="seinen">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/billy-bat.jpg" alt="Billy Bat — Blue Island Blues poster" loading="lazy"><span class="sku mono">SKU-111</span></div>
         <div class="poster-body">
           <div class="poster-title">Billy Bat — Blue Island Blues</div>
-          <div class="poster-meta"><span class="price">$31.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$31.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="billy-bat-blue-island-blues">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="shounen">
+      <a href="product.html?slug=blue-lock-goal" class="poster-card viewframe" data-category="shounen">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/blue-lock.jpg" alt="Blue Lock — Goal poster" loading="lazy"><span class="sku mono">SKU-112</span></div>
         <div class="poster-body">
           <div class="poster-title">Blue Lock — Goal</div>
-          <div class="poster-meta"><span class="price">$28.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$28.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="blue-lock-goal">+ Cart</button>
+          </div>
         </div>
       </a>
 
-      <a href="product.html" class="poster-card viewframe" data-category="scifi">
+      <a href="product.html?slug=gurren-lagann-key-art" class="poster-card viewframe" data-category="scifi">
         <span class="vf-tr"></span><span class="vf-bl"></span>
         <div class="poster-art"><img class="poster-img" src="images/gl.jpg" alt="Gurren Lagann — Key Art poster" loading="lazy"><span class="sku mono">SKU-113</span></div>
         <div class="poster-body">
           <div class="poster-title">Gurren Lagann — Key Art</div>
-          <div class="poster-meta"><span class="price">$33.00</span></div>
+          <div class="poster-meta">
+            <span class="price">$33.00</span>
+            <button type="button" class="btn-add-mini" data-add-to-cart="gurren-lagann-key-art">+ Cart</button>
+          </div>
         </div>
       </a>
 
@@ -178,7 +222,7 @@
         <div class="footer-col">
           <h4>Shop</h4>
           <a href="shop.html">All posters</a>
-          <a href="shop.html">New arrivals</a>
+          <a href="commission.html">Commission a poster</a>
         </div>
         <div class="footer-col">
           <h4>Read</h4>
