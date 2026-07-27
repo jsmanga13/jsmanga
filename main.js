@@ -1,4 +1,4 @@
-// Inkpanel Prints — shared behavior: nav, marquee, shop grid, filters/sort, search,
+// Panelhouse Studios — shared behavior: nav, marquee, shop grid, filters/sort, search,
 // product/cart/collections/quiz pages, cart state.
 
 const PRODUCTS = [
@@ -40,7 +40,7 @@ const PRODUCTS = [
   { sku: 'SKU-136', slug: 'air-gear-storm-riders', title: 'Air Gear — Storm Riders', category: 'shounen', price: 28.00, img: 'images/air-gear-1.jpg', kicker: 'Shounen · Action-Sports · Limited Print', desc: "Ikki and the Storm Riders in flight, reprinted at 18×24\" on matte archival stock." },
 ];
 
-const CART_KEY = 'inkpanel_cart';
+const CART_KEY = 'panelhouse_cart';
 const GENRE_LABELS = { shounen: 'Shounen', seinen: 'Seinen', webtoon: 'Webtoon', 'non-manga': 'Non-Manga' };
 const CHAR_POOL = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const FREE_SHIP_THRESHOLD = 150;
@@ -117,8 +117,16 @@ function pullLever(knobEl) {
   setTimeout(() => { knobEl.style.top = '2px'; }, 220);
 }
 
-const ABOUT_WORDS = ['OUR STORY', 'PANELS WORTH FRAMING', 'WHY INKPANEL', 'INK & PAPER', 'PROOF BEFORE PRESS', 'ARCHIVAL BY DEFAULT'];
+const ABOUT_WORDS = ['OUR STORY', 'PANELS WORTH FRAMING', 'WHY PANELHOUSE', 'DIGITAL INK', 'PROOF BEFORE PRESS', 'ARCHIVAL BY DEFAULT'];
 const ABOUT_WORD_DESCRIPTIONS = ['The founding narrative.', 'The gallery-grade pitch.', 'The case for buying direct.', 'The material philosophy.', 'The quality process.', 'The durability promise.'];
+const ABOUT_WORD_PARAGRAPHS = [
+  'Each print is an original 1 of 1 from all sources related to the series — printed on 100lb gloss paper cardstock, we offer the highest quality prints on the market. All hand-numbered, never reprinted once an edition sells out.',
+  'These aren’t posters pulled off a print-on-demand site — they’re gallery-grade reproductions of the exact panel that stopped you mid-chapter, sized and printed to hold up on a wall, not just a page.',
+  'We work directly with mangaka and publishers instead of going through resellers, so more of what you pay goes back to the artist — and you get a print with a paper trail, not a bootleg.',
+  'Every panel starts as a high-resolution digital file straight from the mangaka or publisher — never a scan of a printed page. That file is cleaned and color-corrected digitally at full resolution, so the linework stays crisp and the color stays true no matter how large the final print is.',
+  'Before an edition goes to press, every print gets a physical proof pulled and checked by hand against the source art — color, contrast, and line weight all have to match. If a proof is even slightly off, we recalibrate and pull another. Nothing ships to a press run until the proof is right.',
+  'Every print ships on the same archival-grade stock we’d use for our own walls — fade-resistant ink, acid-free paper, built to hold its color for decades, not just until the next drop.',
+];
 
 const ABOUT_PALETTES = [
   { rug: '#7a5238', rugBorder: '#9c7250', sofa: '#c9c2b6', sofaLight: '#d8d0c2', plantLeaf: '#7fa668', lampShade: '#f2d9a0', lampGlow: 'rgba(255,214,140,0.55)' },
@@ -133,6 +141,7 @@ function initAboutHero() {
   const titleEl = root.querySelector('[data-reel-title]');
   const wordEl = root.querySelector('[data-reel-word]');
   const descEl = root.querySelector('[data-reel-desc]');
+  const paragraphEl = root.querySelector('[data-reel-paragraph]');
   const leverBtn = root.querySelector('[data-lever-btn]');
   const leverKnob = root.querySelector('[data-lever-knob]');
   const furnitureEl = root.querySelector('[data-furniture]');
@@ -160,6 +169,7 @@ function initAboutHero() {
     renderReelTitle(titleEl, ABOUT_WORDS[idx]);
     if (wordEl) wordEl.textContent = ABOUT_WORDS[idx];
     if (descEl) descEl.textContent = ABOUT_WORD_DESCRIPTIONS[idx];
+    if (paragraphEl) paragraphEl.textContent = ABOUT_WORD_PARAGRAPHS[idx];
   }
   render();
 
@@ -408,11 +418,11 @@ function renderProductPage() {
   const slug = params.get('slug');
   const product = PRODUCTS.find(p => p.slug === slug) || PRODUCTS[0];
 
-  document.title = `${product.title} — Inkpanel Prints`;
+  document.title = `${product.title} — Panelhouse Studios`;
   const metaDesc = document.querySelector('[data-p-meta-desc]');
   if (metaDesc) metaDesc.setAttribute('content', product.desc);
   const ogTitle = document.querySelector('[data-p-og-title]');
-  if (ogTitle) ogTitle.setAttribute('content', `${product.title} — Inkpanel Prints`);
+  if (ogTitle) ogTitle.setAttribute('content', `${product.title} — Panelhouse Studios`);
   const ogDesc = document.querySelector('[data-p-og-desc]');
   if (ogDesc) ogDesc.setAttribute('content', product.desc);
   const ogImage = document.querySelector('[data-p-og-image]');
@@ -1180,7 +1190,7 @@ function initQuiz() {
 
   if (shareBtn) {
     shareBtn.addEventListener('click', () => {
-      const text = `I got matched to ${winner.title} (${winner.headline}) on the Inkpanel Prints panel test.`;
+      const text = `I got matched to ${winner.title} (${winner.headline}) on the Panelhouse Studios panel test.`;
       if (navigator.share) {
         navigator.share({ title: 'Which Panel Are You?', text, url: location.href }).catch(() => {});
       } else if (navigator.clipboard) {
