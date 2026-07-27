@@ -3,80 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cart — JSMANGA</title>
+<title>Cart — Inkpanel Prints</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Review your cart and checkout — free shipping on orders over $150.">
+<meta property="og:title" content="Cart — Inkpanel Prints">
+<meta property="og:description" content="Officially licensed manga art prints, printed and shipped from our studio.">
+<meta property="og:image" content="images/crew-story.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="wrap">
-    <a href="index.html" class="brand">
-      <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      JSMANGA<span class="brand-accent">poster</span>
-    </a>
-    <div class="navlinks">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="commission.html">Commission</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="about.html">About</a>
-    </div>
+<header class="site-nav">
+  <a href="index.html" class="nav-brand">Inkpanel Prints</a>
+  <button type="button" class="nav-toggle" aria-label="Toggle menu">Menu</button>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="collections.html">Collections</a>
+    <a href="commission.html">Commission</a>
+    <a href="about.html">About</a>
+  </nav>
+  <div class="nav-actions">
     <div class="nav-search">
       <input type="search" placeholder="Search posters…" data-search-input autocomplete="off">
       <div class="search-results" data-search-results></div>
     </div>
-    <a href="cart.html" class="nav-cta">
-      <span class="vheart"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      <span class="cart-label">Cart (<span class="cart-count">0</span>)</span>
-    </a>
-  </div>
-</nav>
-
-<header class="page-hero">
-  <div class="wrap">
-    <span class="tag">Your Cart</span>
-    <h1>Everything you've picked so far.</h1>
+    <a href="cart.html" class="cart-pill">Cart (<span class="cart-count">0</span>)</a>
   </div>
 </header>
 
-<section class="section" style="border-bottom:none;">
-  <div class="wrap">
+<div data-cart-page>
+
+  <section style="padding:40px 48px 28px; border-bottom: var(--border-thin) solid var(--border-strong); display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+    <div>
+      <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;" data-cart-item-count></div>
+      <h1 style="font-size:clamp(40px,6vw,72px); text-transform:uppercase; line-height:0.92;" data-cart-title>Your Cart</h1>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <span class="badge">Archival Cotton Rag</span>
+      <span class="badge">Hand-Numbered</span>
+    </div>
+  </section>
+
+  <div style="padding:20px 48px; border-bottom: var(--border-thin) solid var(--border-strong); display:flex; gap:28px;" class="mono" data-cart-steps></div>
+
+  <section class="section no-border" data-cart-step-cart style="display:none;">
     <div class="cart-layout">
-      <div data-cart-items></div>
+      <div>
+        <div data-cart-items></div>
+        <div style="padding-top:28px;"><a href="shop.html" style="font-weight:var(--weight-bold); font-size:var(--text-sm); text-transform:uppercase; letter-spacing:0.5px;">← Continue Shopping</a></div>
+      </div>
       <div class="cart-summary" data-cart-summary></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-        JSMANGA<span class="brand-accent">poster</span>
-      </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>Shop</h4>
-          <a href="shop.html">All posters</a>
-          <a href="commission.html">Commission a poster</a>
+  <section class="section no-border" data-cart-step-shipping style="display:none;">
+    <div class="cart-layout">
+      <form data-cart-shipping-form style="display:flex; flex-direction:column; gap:16px; max-width:560px;">
+        <div style="font-family:var(--font-display); font-size:var(--display-sm); letter-spacing:0.5px; text-transform:uppercase; margin-bottom:8px;">Shipping Address</div>
+        <input class="field-input" name="name" type="text" placeholder="Full name" required>
+        <input class="field-input" name="email" type="email" placeholder="Email" required>
+        <input class="field-input" name="address" type="text" placeholder="Street address" required>
+        <div class="field-row" style="grid-template-columns:1fr 1fr 1fr;">
+          <input class="field-input" name="city" type="text" placeholder="City" required>
+          <input class="field-input" name="state" type="text" placeholder="State" required>
+          <input class="field-input" name="zip" type="text" placeholder="ZIP" required>
         </div>
-        <div class="footer-col">
-          <h4>Read</h4>
-          <a href="reviews.html">Reviews</a>
-          <a href="about.html">About</a>
+        <input class="field-input" name="country" type="text" placeholder="Country" required>
+        <div style="display:flex; gap:16px; margin-top:12px;">
+          <button type="button" class="btn secondary" data-cart-back-to-cart>Back to Cart</button>
+          <button type="submit" class="btn accent">Continue to Payment</button>
         </div>
-        <div class="footer-col">
-          <h4>Info</h4>
-          <a href="about.html">Shipping</a>
-          <a href="about.html">Contact</a>
-        </div>
-      </div>
+      </form>
+      <div class="cart-summary" data-cart-summary-mini></div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 JSMANGA. All posters are fan-made, original-design prints unless noted.</span>
-      <span>Made with a vector star.</span>
+  </section>
+
+  <section class="section no-border" data-cart-step-payment style="display:none;">
+    <div class="cart-layout">
+      <form data-cart-payment-form style="display:flex; flex-direction:column; gap:16px; max-width:560px;">
+        <div style="font-family:var(--font-display); font-size:var(--display-sm); letter-spacing:0.5px; text-transform:uppercase; margin-bottom:8px;">Payment</div>
+        <input class="field-input" name="name" type="text" placeholder="Name on card" required>
+        <input class="field-input" name="number" type="text" placeholder="Card number" required>
+        <div class="field-row">
+          <input class="field-input" name="expiry" type="text" placeholder="MM / YY" required>
+          <input class="field-input" name="cvc" type="text" placeholder="CVC" required>
+        </div>
+        <div class="mono" style="font-size:var(--text-3xs); color:var(--text-muted); letter-spacing:0.5px;" data-cart-ship-to></div>
+        <div style="display:flex; gap:16px; margin-top:12px;">
+          <button type="button" class="btn secondary" data-cart-back-to-shipping>Back</button>
+          <button type="submit" class="btn accent">Place Order</button>
+        </div>
+      </form>
+      <div class="cart-summary" data-cart-summary-mini></div>
     </div>
+  </section>
+
+  <section data-cart-step-confirmation style="display:none; flex-direction:column; align-items:center; justify-content:center; gap:20px; padding:80px 48px; text-align:center;">
+    <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--red-600);" data-cart-order-number></div>
+    <h2 style="font-size:clamp(32px,5vw,56px); text-transform:uppercase;">Thank You</h2>
+    <div style="font-size:var(--text-md); color:var(--text-muted); max-width:460px;">Your prints are queued for printing and numbering. A confirmation and tracking link is on its way to <span data-cart-confirm-email></span>.</div>
+    <a href="shop.html" class="btn primary">Continue Shopping</a>
+  </section>
+
+  <div class="cart-empty" data-cart-empty style="display:none;">
+    <h1 style="font-size:clamp(32px,5vw,52px); text-transform:uppercase;">Your cart is empty</h1>
+    <p style="color:var(--text-muted); max-width:420px;">Browse the gallery and find a panel worth framing.</p>
+    <a href="shop.html" class="btn primary">Shop Prints</a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-newsletter">
+    <div>
+      <div class="footer-newsletter-title">Get notified of new drops</div>
+      <div class="footer-newsletter-sub">No spam. Just prints. Unsubscribe anytime.</div>
+    </div>
+    <form data-newsletter-form class="footer-newsletter-form">
+      <input class="field-input" type="email" placeholder="you@email.com" required>
+      <button type="submit" class="btn accent">Sign up</button>
+    </form>
+  </div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Inkpanel Prints</div>
+      <p class="footer-blurb">Officially licensed manga art prints, printed and shipped from our studio.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All prints</a>
+      <a href="collections.html">Collections</a>
+      <a href="about.html#team">Artists</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="about.html#shipping">Shipping</a>
+      <a href="about.html#returns">Returns</a>
+      <a href="commission.html#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inkpanel Prints — All prints ship from our studio.</span>
   </div>
 </footer>
 

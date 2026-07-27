@@ -3,109 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poster — JSMANGA</title>
+<title>Poster — Inkpanel Prints</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Officially licensed manga art print — giclée on 100% cotton rag, hand-numbered, never reprinted." data-p-meta-desc>
+<meta property="og:title" content="Poster — Inkpanel Prints" data-p-og-title>
+<meta property="og:description" content="Officially licensed manga art print — giclée on 100% cotton rag, hand-numbered, never reprinted." data-p-og-desc>
+<meta property="og:image" content="images/blue-lock.jpg" data-p-og-image>
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="wrap">
-    <a href="index.html" class="brand">
-      <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      JSMANGA<span class="brand-accent">poster</span>
-    </a>
-    <div class="navlinks">
-      <a href="index.html">Home</a>
-      <a href="shop.html" class="active">Shop</a>
-      <a href="commission.html">Commission</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="about.html">About</a>
-    </div>
+<header class="site-nav">
+  <a href="index.html" class="nav-brand">Inkpanel Prints</a>
+  <button type="button" class="nav-toggle" aria-label="Toggle menu">Menu</button>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html" class="active">Shop</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="collections.html">Collections</a>
+    <a href="commission.html">Commission</a>
+    <a href="about.html">About</a>
+  </nav>
+  <div class="nav-actions">
     <div class="nav-search">
       <input type="search" placeholder="Search posters…" data-search-input autocomplete="off">
       <div class="search-results" data-search-results></div>
     </div>
-    <a href="cart.html" class="nav-cta">
-      <span class="vheart"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      <span class="cart-label">Cart (<span class="cart-count">0</span>)</span>
-    </a>
+    <a href="cart.html" class="cart-pill">Cart (<span class="cart-count">0</span>)</a>
   </div>
-</nav>
+</header>
 
-<div class="wrap" data-product-page>
-  <div class="product-layout">
+<div data-product-page>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span data-p-breadcrumb></span>
+  </div>
 
-    <div class="product-frame viewframe">
-      <span class="vf-tr"></span><span class="vf-bl"></span>
-      <div class="poster-art" style="height:100%; aspect-ratio:auto;">
-        <img class="poster-img" data-p-img src="" alt="">
-        <span class="sku mono" data-p-sku></span>
+  <section class="section">
+    <div class="product-layout">
+      <div class="product-frame">
+        <img data-p-img src="" alt="">
+      </div>
+      <div class="product-info">
+        <span class="badge accent" data-p-genre-badge style="width:fit-content;"></span>
+        <h1 data-p-title></h1>
+        <div class="product-kicker" data-p-kicker></div>
+        <a href="#reviews" style="display:flex; align-items:center; gap:8px; width:fit-content; color:var(--text-primary);">
+          <span style="color:var(--red-600); font-family:var(--font-display); font-size:var(--text-md); letter-spacing:1px;" data-p-rating-stars></span>
+          <span style="font-size:var(--text-sm); text-decoration:underline;"><span data-p-rating-avg></span> (<span data-p-review-count></span> reviews)</span>
+        </a>
+        <span class="product-price" data-p-price></span>
+        <p class="product-desc" data-p-desc></p>
+
+        <div class="option-group">
+          <div class="option-group-label">Print Size</div>
+          <div class="option-tiles" data-p-size-options></div>
+        </div>
+
+        <div class="option-group">
+          <div class="option-group-label">Shipping</div>
+          <div class="option-tiles" data-p-shipping-options></div>
+        </div>
+
+        <div class="qty-stepper" style="width:fit-content;">
+          <button type="button" class="qty-btn" data-qty-dec aria-label="Decrease quantity">−</button>
+          <span data-qty-value style="font-weight:var(--weight-bold); min-width:16px; text-align:center;">1</span>
+          <button type="button" class="qty-btn" data-qty-inc aria-label="Increase quantity">+</button>
+        </div>
+
+        <div class="product-actions">
+          <button type="button" class="btn primary" data-add-to-cart-btn>Add to Cart</button>
+        </div>
+
+        <div class="stat-row" style="margin-top:8px; padding-top:20px; border-top: var(--border-thin) solid var(--border-strong);">
+          <div class="stat-block"><div class="stat-value">100%</div><div class="stat-label">Cotton rag</div></div>
+          <div class="stat-block"><div class="stat-value">1:1</div><div class="stat-label">Hand-numbered</div></div>
+        </div>
       </div>
     </div>
-
-    <div class="product-info">
-      <span class="kicker" data-p-kicker></span>
-      <h1 data-p-title></h1>
-      <span class="product-price" data-p-price></span>
-      <p class="product-desc" data-p-desc></p>
-
-      <div class="product-actions">
-        <button type="button" class="btn" data-add-to-cart-btn data-add-to-cart="">Add to cart</button>
-        <a href="reviews.html" class="btn ghost">Read the review</a>
-      </div>
-
-      <div class="specs">
-        <div class="spec-row"><span>Size</span><span class="mono">18 × 24 in</span></div>
-        <div class="spec-row"><span>Paper</span><span class="mono">200gsm matte archival</span></div>
-        <div class="spec-row"><span>Edition</span><span class="mono">Open — reprinted on order</span></div>
-        <div class="spec-row"><span>Ships</span><span class="mono">3–5 business days</span></div>
-      </div>
-    </div>
-
-  </div>
+  </section>
 </div>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="tag">003 / Related</span>
-        <h2>You might also like</h2>
-      </div>
+<section id="reviews" class="section">
+  <h2 style="margin-bottom:36px;">Reviews</h2>
+  <div style="display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:start;">
+    <div style="display:flex; flex-direction:column; gap:16px; position:sticky; top:100px;">
+      <div style="font-family:var(--font-display); font-size:var(--display-xl); line-height:1;" data-p-rating-avg></div>
+      <div style="color:var(--red-600); font-family:var(--font-display); font-size:var(--text-lg); letter-spacing:2px;" data-p-rating-stars></div>
+      <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted);">Based on <span data-p-review-count></span> reviews</div>
+      <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px;" data-p-rating-breakdown></div>
     </div>
-    <div class="grid" data-related-grid></div>
+    <div style="display:flex; flex-direction:column;" data-p-reviews></div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-        JSMANGA<span class="brand-accent">poster</span>
-      </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>Shop</h4>
-          <a href="shop.html">All posters</a>
-          <a href="commission.html">Commission a poster</a>
-        </div>
-        <div class="footer-col">
-          <h4>Read</h4>
-          <a href="reviews.html">Reviews</a>
-          <a href="about.html">About</a>
-        </div>
-        <div class="footer-col">
-          <h4>Info</h4>
-          <a href="about.html">Shipping</a>
-          <a href="about.html">Contact</a>
-        </div>
-      </div>
+<section class="section">
+  <div class="section-head">
+    <h2>You May Also Like</h2>
+    <a href="shop.html" class="view-all arrow-link">View all<span class="arrow-glyph">→</span></a>
+  </div>
+  <div class="grid cols-4" data-related-grid></div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-newsletter">
+    <div>
+      <div class="footer-newsletter-title">Get notified of new drops</div>
+      <div class="footer-newsletter-sub">No spam. Just prints. Unsubscribe anytime.</div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 JSMANGA. All posters are fan-made, original-design prints unless noted.</span>
-      <span>Made with a vector star.</span>
+    <form data-newsletter-form class="footer-newsletter-form">
+      <input class="field-input" type="email" placeholder="you@email.com" required>
+      <button type="submit" class="btn accent">Sign up</button>
+    </form>
+  </div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Inkpanel Prints</div>
+      <p class="footer-blurb">Officially licensed manga art prints, printed and shipped from our studio.</p>
     </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All prints</a>
+      <a href="collections.html">Collections</a>
+      <a href="about.html#team">Artists</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="about.html#shipping">Shipping</a>
+      <a href="about.html#returns">Returns</a>
+      <a href="commission.html#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inkpanel Prints — All prints ship from our studio.</span>
   </div>
 </footer>
 

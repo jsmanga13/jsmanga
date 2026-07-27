@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collections — Inkpanel Prints</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Browse every manga print we carry, grouped by series and genre.">
+<meta property="og:title" content="Collections — Inkpanel Prints">
+<meta property="og:description" content="Browse every manga print we carry, grouped by series.">
+<meta property="og:image" content="images/gl.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <a href="index.html" class="nav-brand">Inkpanel Prints</a>
+  <button type="button" class="nav-toggle" aria-label="Toggle menu">Menu</button>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="collections.html" class="active">Collections</a>
+    <a href="commission.html">Commission</a>
+    <a href="about.html">About</a>
+  </nav>
+  <div class="nav-actions">
+    <div class="nav-search">
+      <input type="search" placeholder="Search posters…" data-search-input autocomplete="off">
+      <div class="search-results" data-search-results></div>
+    </div>
+    <a href="cart.html" class="cart-pill">Cart (<span class="cart-count">0</span>)</a>
+  </div>
+</header>
+
+<div data-collections-page>
+
+  <section style="padding:72px 48px 36px; border-bottom: var(--border-thick) solid var(--border-strong);">
+    <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted); margin-bottom:14px;" data-collections-count-label></div>
+    <div class="lever-row" style="align-items:flex-end; gap:28px;">
+      <h1 class="reel-title" data-reel-title style="font-size:clamp(48px,7vw,92px); letter-spacing:-1px; color:var(--text-primary); transform:scaleY(1.18); transform-origin:bottom center;"></h1>
+      <button type="button" class="lever-btn" data-lever-btn aria-label="Pull for another title" style="padding:0 4px 0;">
+        <div class="lever-track"><div class="lever-knob" data-lever-knob></div></div>
+        <div class="lever-base"></div>
+        <span class="lever-label">Pull</span>
+      </button>
+    </div>
+    <div style="font-size:var(--text-md); color:var(--text-muted); margin-top:16px; max-width:600px;">Every title we print, grouped by series. Search by name or filter by genre to <span data-collections-narrow>narrow</span> things down.</div>
+  </section>
+
+  <section class="collections-filter-bar">
+    <div class="genre-chip-row">
+      <button type="button" class="genre-chip active" data-genre="all">All</button>
+      <button type="button" class="genre-chip" data-genre="shounen">Shounen</button>
+      <button type="button" class="genre-chip" data-genre="seinen">Seinen</button>
+      <button type="button" class="genre-chip" data-genre="webtoon">Webtoon</button>
+      <button type="button" class="genre-chip" data-genre="non-manga">Non-Manga</button>
+    </div>
+    <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+      <input type="search" class="field-input" data-collections-search placeholder="Search collections…" style="width:200px; border-radius:999px;">
+      <select class="sort-select" data-collections-sort>
+        <option value="featured">Best Selling</option>
+        <option value="az">A–Z</option>
+      </select>
+    </div>
+  </section>
+
+  <section data-collections-spotlight style="border-bottom: var(--border-thick) solid var(--border-strong);"></section>
+
+  <section style="padding:8px 48px; background: var(--ink-900);" data-collections-list></section>
+
+  <section class="section stat-row" data-collections-stats></section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-newsletter">
+    <div>
+      <div class="footer-newsletter-title">Get notified of new drops</div>
+      <div class="footer-newsletter-sub">No spam. Just prints. Unsubscribe anytime.</div>
+    </div>
+    <form data-newsletter-form class="footer-newsletter-form">
+      <input class="field-input" type="email" placeholder="you@email.com" required>
+      <button type="submit" class="btn accent">Sign up</button>
+    </form>
+  </div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Inkpanel Prints</div>
+      <p class="footer-blurb">Officially licensed manga art prints, printed and shipped from our studio.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All prints</a>
+      <a href="collections.html">Collections</a>
+      <a href="about.html#team">Artists</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="about.html#shipping">Shipping</a>
+      <a href="about.html#returns">Returns</a>
+      <a href="commission.html#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inkpanel Prints — All prints ship from our studio.</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

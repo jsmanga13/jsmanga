@@ -3,191 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JSMANGA — Posters &amp; Reviews</title>
+<title>Inkpanel Prints — Panels Worth Framing</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Officially licensed manga art prints — giclée on 100% cotton rag, hand-numbered, never reprinted. Shop panels from Blue Lock, One Piece, My Hero Academia, and more.">
+<meta property="og:title" content="Inkpanel Prints — Panels Worth Framing">
+<meta property="og:description" content="Officially licensed manga art prints — giclée on 100% cotton rag, hand-numbered, never reprinted.">
+<meta property="og:image" content="images/blue-lock.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="wrap">
-    <a href="index.html" class="brand">
-      <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      JSMANGA<span class="brand-accent">poster</span>
-    </a>
-    <div class="navlinks">
-      <a href="index.html" class="active">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="commission.html">Commission</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="about.html">About</a>
-    </div>
+<header class="site-nav">
+  <a href="index.html" class="nav-brand">Inkpanel Prints</a>
+  <button type="button" class="nav-toggle" aria-label="Toggle menu">Menu</button>
+  <nav class="nav-links">
+    <a href="shop.html">Shop</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="collections.html">Collections</a>
+    <a href="commission.html">Commission</a>
+    <a href="about.html">About</a>
+  </nav>
+  <div class="nav-actions">
     <div class="nav-search">
       <input type="search" placeholder="Search posters…" data-search-input autocomplete="off">
       <div class="search-results" data-search-results></div>
     </div>
-    <a href="cart.html" class="nav-cta">
-      <span class="vheart"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      <span class="cart-label">Cart (<span class="cart-count">0</span>)</span>
-    </a>
+    <a href="cart.html" class="cart-pill">Cart (<span class="cart-count">0</span>)</a>
   </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap">
-    <div class="hero-eyebrow">
-      <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      PRINTS FOR PEOPLE WHO READ THE PANEL TWICE
-    </div>
-    <h1>Manga posters, <span class="accent">honestly</span> reviewed before you hang them.</h1>
-    <p class="lede">Every print in the shop is paired with a real, spoiler-tagged review — so you know exactly what arc, what artist, and what mood you're putting on your wall.</p>
-    <div class="hero-actions">
-      <a href="shop.html" class="btn">Browse the shop →</a>
-      <a href="reviews.html" class="btn ghost">Read reviews first</a>
-    </div>
-  </div>
-  <span class="hero-bg-heart"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z" fill="currentColor" stroke="none"/></svg></span>
 </header>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="tag">001 / Featured</span>
-        <h2>This week's prints</h2>
-      </div>
-      <a href="shop.html">View all posters →</a>
+<section style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:0; border-bottom: var(--border-thick) solid var(--border-strong); min-height:560px;">
+  <div style="display:flex; flex-direction:column; justify-content:center; padding:64px; gap:24px; border-right: var(--border-thin) solid var(--border-strong);">
+    <div style="font-size:var(--text-sm); font-weight:var(--weight-bold); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--red-600);">New Drop — Vol. 04</div>
+    <h1 style="font-size:var(--display-xl); line-height:0.92;">Panels<br>Worth<br>Framing</h1>
+    <p style="font-size:var(--text-md); line-height:var(--body-line-height); max-width:440px; color:var(--text-body);">Museum-grade prints of iconic manga panels and splash pages. Numbered editions, printed on archival stock.</p>
+    <div style="display:flex; gap:16px; margin-top:8px; flex-wrap:wrap;">
+      <a href="shop.html" class="btn primary">Shop the drop</a>
+      <a href="about.html#story" class="btn secondary">Our story</a>
     </div>
-    <div class="grid">
+  </div>
+  <div style="position:relative; min-height:320px;">
+    <div style="position:absolute; top:24px; right:24px; z-index:1;"><span class="badge accent">Featured print</span></div>
+    <img src="images/blue-lock.jpg" alt="Blue Lock — Goal poster" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-left: var(--border-thin) solid var(--border-strong);">
+  </div>
+</section>
 
-      <a href="product.html?slug=one-piece-east-blue-crew" class="poster-card viewframe">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/crew-story.jpg" alt="One Piece — East Blue Crew poster" loading="lazy"><span class="sku mono">SKU-104</span></div>
-        <div class="poster-body">
-          <div class="poster-title">One Piece — East Blue Crew</div>
-          <div class="poster-meta">
-            <span class="price">$32.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="one-piece-east-blue-crew">+ Cart</button>
-          </div>
-        </div>
-      </a>
+<section id="shop" class="section">
+  <div class="section-head">
+    <h2>Featured Prints</h2>
+    <a href="shop.html" class="view-all arrow-link">View all<span class="arrow-glyph">→</span></a>
+  </div>
+  <div class="grid cols-4" data-featured-grid data-slugs="one-piece-east-blue-crew,kaoru-hana-vol-4,blue-lock-goal,reborn-vongola-ensemble"></div>
+</section>
 
-      <a href="product.html?slug=kaoru-hana-vol-4" class="poster-card viewframe">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/4.jpg" alt="Kaoru Hana wa Rin to Saku — Vol. 4 Cover poster" loading="lazy"><span class="sku mono">SKU-101</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Kaoru Hana wa Rin to Saku — Vol. 4</div>
-          <div class="poster-meta">
-            <span class="price">$28.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="kaoru-hana-vol-4">+ Cart</button>
-          </div>
-        </div>
-      </a>
+<section id="collections" class="section inverse">
+  <h2 style="margin-bottom:36px;">Shop By Collection</h2>
+  <div class="grid cols-3" data-collections-grid data-limit="3"></div>
+</section>
 
-      <a href="product.html?slug=blue-lock-goal" class="poster-card viewframe">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/blue-lock.jpg" alt="Blue Lock — Goal poster" loading="lazy"><span class="sku mono">SKU-112</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Blue Lock — Goal</div>
-          <div class="poster-meta">
-            <span class="price">$28.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="blue-lock-goal">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=reborn-vongola-ensemble" class="poster-card viewframe">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/overdfue.jpg" alt="Katekyo Hitman Reborn! — Vongola Ensemble poster" loading="lazy"><span class="sku mono">SKU-106</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Katekyo Hitman Reborn! — Vongola Ensemble</div>
-          <div class="poster-meta">
-            <span class="price">$29.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="reborn-vongola-ensemble">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
+<section id="story" style="display:grid; grid-template-columns:0.9fr 1.1fr; border-bottom: var(--border-thick) solid var(--border-strong);">
+  <img src="images/crew-story.jpg" alt="One Piece — East Blue Crew" style="width:100%; min-height:460px; object-fit:cover; border-right: var(--border-thin) solid var(--border-strong);">
+  <div style="padding:64px; display:flex; flex-direction:column; justify-content:center; gap:20px;">
+    <span class="eyebrow">Why Inkpanel</span>
+    <h2 style="font-size:var(--display-md); line-height:1;">From The Page To Your Wall</h2>
+    <p style="font-size:var(--text-base); line-height:var(--body-line-height); color:var(--text-body); max-width:480px;">We work directly with mangaka and licensing partners to turn iconic panels into archival prints — giclée on 100% cotton rag, hand-numbered, never reprinted once an edition sells out.</p>
+    <div class="stat-row" style="margin-top:12px;">
+      <div class="stat-block"><div class="stat-value">120+</div><div class="stat-label">Licensed titles</div></div>
+      <div class="stat-block"><div class="stat-value">40k</div><div class="stat-label">Prints shipped</div></div>
+      <div class="stat-block"><div class="stat-value">100%</div><div class="stat-label">Archival stock</div></div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="tag">002 / From the desk</span>
-        <h2>Latest reviews</h2>
-      </div>
-      <a href="reviews.html">All reviews →</a>
-    </div>
-    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
-
-      <div class="review-card">
-        <div class="review-top">
-          <div>
-            <div class="review-title">One Piece, East Blue Saga</div>
-            <div class="review-meta">Shounen · Adventure · 570pp</div>
-          </div>
-          <div class="review-score">9.3<span>/10</span></div>
-        </div>
-        <p class="review-excerpt">The crew's first roll call still holds up — every recruitment arc earns its poster moment.</p>
-      </div>
-
-      <div class="review-card">
-        <div class="review-top">
-          <div>
-            <div class="review-title">Kaoru Hana wa Rin to Saku, Vol. 4</div>
-            <div class="review-meta">Shoujo · Drama · 190pp</div>
-          </div>
-          <div class="review-score">8.9<span>/10</span></div>
-        </div>
-        <p class="review-excerpt">A quiet volume that trusts silence more than dialogue. Rare, and it works.</p>
-      </div>
-
-      <div class="review-card">
-        <div class="review-top">
-          <div>
-            <div class="review-title">Blue Lock, Ego Arc</div>
-            <div class="review-meta">Shounen · Sports · 210pp</div>
-          </div>
-          <div class="review-score">8.5<span>/10</span></div>
-        </div>
-        <p class="review-excerpt">The most unhinged a soccer manga has any right to be — and the poster art proves it.</p>
-      </div>
-
-    </div>
+<section class="section" style="display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;">
+  <div>
+    <h2 style="font-size:var(--display-md);">Get Notified Of New Drops</h2>
+    <div style="font-size:var(--text-base); color:var(--text-muted); margin-top:6px;">No spam. Just prints. Unsubscribe anytime.</div>
   </div>
+  <form data-newsletter-form style="display:flex; gap:12px; flex-wrap:wrap;">
+    <input class="field-input" type="email" placeholder="you@email.com" required style="width:280px;">
+    <button type="submit" class="btn accent">Sign up</button>
+  </form>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-        JSMANGA<span class="brand-accent">poster</span>
-      </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>Shop</h4>
-          <a href="shop.html">All posters</a>
-          <a href="commission.html">Commission a poster</a>
-        </div>
-        <div class="footer-col">
-          <h4>Read</h4>
-          <a href="reviews.html">Reviews</a>
-          <a href="about.html">About</a>
-        </div>
-        <div class="footer-col">
-          <h4>Info</h4>
-          <a href="about.html">Shipping</a>
-          <a href="about.html">Contact</a>
-        </div>
-      </div>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Inkpanel Prints</div>
+      <p class="footer-blurb">Officially licensed manga art prints, printed and shipped from our studio.</p>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 JSMANGA. All posters are fan-made, original-design prints unless noted.</span>
-      <span>Made with a vector star.</span>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All prints</a>
+      <a href="collections.html">Collections</a>
+      <a href="about.html#team">Artists</a>
     </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="about.html#shipping">Shipping</a>
+      <a href="about.html#returns">Returns</a>
+      <a href="commission.html#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inkpanel Prints — All prints ship from our studio.</span>
   </div>
 </footer>
 

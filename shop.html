@@ -3,483 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop — JSMANGA</title>
+<title>Shop — Inkpanel Prints</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Shop officially licensed manga art prints by series and genre — Shounen, Seinen, Webtoon, and Non-Manga illustration.">
+<meta property="og:title" content="Shop — Inkpanel Prints">
+<meta property="og:description" content="Shop officially licensed manga art prints by series and genre.">
+<meta property="og:image" content="images/blue-lock.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="wrap">
-    <a href="index.html" class="brand">
-      <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      JSMANGA<span class="brand-accent">poster</span>
-    </a>
-    <div class="navlinks">
-      <a href="index.html">Home</a>
-      <a href="shop.html" class="active">Shop</a>
-      <a href="commission.html">Commission</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="about.html">About</a>
-    </div>
+<header class="site-nav">
+  <a href="index.html" class="nav-brand">Inkpanel Prints</a>
+  <button type="button" class="nav-toggle" aria-label="Toggle menu">Menu</button>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html" class="active">Shop</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="collections.html">Collections</a>
+    <a href="commission.html">Commission</a>
+    <a href="about.html">About</a>
+  </nav>
+  <div class="nav-actions">
     <div class="nav-search">
       <input type="search" placeholder="Search posters…" data-search-input autocomplete="off">
       <div class="search-results" data-search-results></div>
     </div>
-    <a href="cart.html" class="nav-cta">
-      <span class="vheart"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      <span class="cart-label">Cart (<span class="cart-count">0</span>)</span>
-    </a>
-  </div>
-</nav>
-
-<header class="page-hero">
-  <div class="wrap">
-    <span class="tag">Shop / All Prints</span>
-    <h1>Every poster, arc-tagged and in stock.</h1>
+    <a href="cart.html" class="cart-pill">Cart (<span class="cart-count">0</span>)</a>
   </div>
 </header>
 
-<section class="section" style="border-bottom:none;">
-  <div class="wrap">
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="shounen">Shounen</button>
-      <button class="filter-btn" data-filter="shoujo">Shoujo</button>
-      <button class="filter-btn" data-filter="seinen">Seinen</button>
-      <button class="filter-btn" data-filter="scifi">Sci-Fi</button>
+<section class="drop-hero">
+  <img src="images/blue-lock.jpg" alt="Blue Lock — Goal poster">
+  <div class="drop-hero-content">
+    <div>
+      <span class="eyebrow">New Drop — Vol. 04</span>
+      <h1>Blue Lock — Goal</h1>
+      <div class="drop-sub">K. Kaneshiro · giclée on 100% cotton rag · hand-numbered, never reprinted.</div>
     </div>
-
-    <div class="grid">
-
-      <a href="product.html?slug=one-piece-east-blue-crew" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/crew-story.jpg" alt="One Piece — East Blue Crew poster" loading="lazy"><span class="sku mono">SKU-104</span></div>
-        <div class="poster-body">
-          <div class="poster-title">One Piece — East Blue Crew</div>
-          <div class="poster-meta">
-            <span class="price">$32.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="one-piece-east-blue-crew">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=one-piece-wano-gear-5" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/natsuba.jpg" alt="One Piece — Wano, Gear 5 poster" loading="lazy"><span class="sku mono">SKU-105</span></div>
-        <div class="poster-body">
-          <div class="poster-title">One Piece — Wano, Gear 5</div>
-          <div class="poster-meta">
-            <span class="price">$34.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="one-piece-wano-gear-5">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=kaoru-hana-vol-4" class="poster-card viewframe" data-category="shoujo">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/4.jpg" alt="Kaoru Hana wa Rin to Saku — Vol. 4 Cover poster" loading="lazy"><span class="sku mono">SKU-101</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Kaoru Hana wa Rin to Saku — Vol. 4</div>
-          <div class="poster-meta">
-            <span class="price">$28.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="kaoru-hana-vol-4">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=kaoru-hana-meeting-family" class="poster-card viewframe" data-category="shoujo">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/meeting.jpg" alt="Kaoru Hana wa Rin to Saku — Meeting the Family poster" loading="lazy"><span class="sku mono">SKU-102</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Kaoru Hana wa Rin to Saku — Meeting the Family</div>
-          <div class="poster-meta">
-            <span class="price">$26.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="kaoru-hana-meeting-family">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=kaoru-hana-kaoruko-waguri" class="poster-card viewframe" data-category="shoujo">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/r2.jpg" alt="Kaoru Hana wa Rin to Saku — Kaoruko Waguri poster" loading="lazy"><span class="sku mono">SKU-103</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Kaoru Hana wa Rin to Saku — Kaoruko Waguri</div>
-          <div class="poster-meta">
-            <span class="price">$30.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="kaoru-hana-kaoruko-waguri">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=reborn-vongola-ensemble" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/overdfue.jpg" alt="Katekyo Hitman Reborn! — Vongola Ensemble poster" loading="lazy"><span class="sku mono">SKU-106</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Katekyo Hitman Reborn! — Vongola Ensemble</div>
-          <div class="poster-meta">
-            <span class="price">$29.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="reborn-vongola-ensemble">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=reborn-battle-colors" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/r1.jpg" alt="Katekyo Hitman Reborn! — Battle Colors poster" loading="lazy"><span class="sku mono">SKU-107</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Katekyo Hitman Reborn! — Battle Colors</div>
-          <div class="poster-meta">
-            <span class="price">$27.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="reborn-battle-colors">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=soul-eater-death-the-kid" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/rinka.jpg" alt="Soul Eater — Death the Kid poster" loading="lazy"><span class="sku mono">SKU-108</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Soul Eater — Death the Kid</div>
-          <div class="poster-meta">
-            <span class="price">$25.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="soul-eater-death-the-kid">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=soul-eater-weapon-ensemble" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/soulll.jpg" alt="Soul Eater — Weapon Ensemble poster" loading="lazy"><span class="sku mono">SKU-109</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Soul Eater — Weapon Ensemble</div>
-          <div class="poster-meta">
-            <span class="price">$25.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="soul-eater-weapon-ensemble">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=beelzebub-jump-comics-cover" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/beel.jpg" alt="Beelzebub — Jump Comics Cover poster" loading="lazy"><span class="sku mono">SKU-110</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Beelzebub — Jump Comics Cover</div>
-          <div class="poster-meta">
-            <span class="price">$26.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="beelzebub-jump-comics-cover">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=billy-bat-blue-island-blues" class="poster-card viewframe" data-category="seinen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/billy-bat.jpg" alt="Billy Bat — Blue Island Blues poster" loading="lazy"><span class="sku mono">SKU-111</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Billy Bat — Blue Island Blues</div>
-          <div class="poster-meta">
-            <span class="price">$31.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="billy-bat-blue-island-blues">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=blue-lock-goal" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/blue-lock.jpg" alt="Blue Lock — Goal poster" loading="lazy"><span class="sku mono">SKU-112</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Blue Lock — Goal</div>
-          <div class="poster-meta">
-            <span class="price">$28.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="blue-lock-goal">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=gurren-lagann-key-art" class="poster-card viewframe" data-category="scifi">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/gl.jpg" alt="Gurren Lagann — Key Art poster" loading="lazy"><span class="sku mono">SKU-113</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Gurren Lagann — Key Art</div>
-          <div class="poster-meta">
-            <span class="price">$33.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="gurren-lagann-key-art">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=my-hero-academia-one-for-all-vs-all-for-one" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/hero-1.jpg" alt="My Hero Academia — One For All vs. All For One poster" loading="lazy"><span class="sku mono">SKU-114</span></div>
-        <div class="poster-body">
-          <div class="poster-title">My Hero Academia — One For All vs. All For One</div>
-          <div class="poster-meta">
-            <span class="price">$32.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="my-hero-academia-one-for-all-vs-all-for-one">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=tokyo-revengers-baji-toman" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/baji-1.jpg" alt="Tokyo Revengers — Baji & Toman poster" loading="lazy"><span class="sku mono">SKU-115</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Tokyo Revengers — Baji & Toman</div>
-          <div class="poster-meta">
-            <span class="price">$28.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="tokyo-revengers-baji-toman">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=my-hero-academia-plus-ultra" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/plus-ultra-1.jpg" alt="My Hero Academia — Plus Ultra poster" loading="lazy"><span class="sku mono">SKU-116</span></div>
-        <div class="poster-body">
-          <div class="poster-title">My Hero Academia — Plus Ultra</div>
-          <div class="poster-meta">
-            <span class="price">$30.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="my-hero-academia-plus-ultra">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=my-hero-academia-one-for-all" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/db-1.jpg" alt="My Hero Academia — One For All poster" loading="lazy"><span class="sku mono">SKU-117</span></div>
-        <div class="poster-body">
-          <div class="poster-title">My Hero Academia — One For All</div>
-          <div class="poster-meta">
-            <span class="price">$29.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="my-hero-academia-one-for-all">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=kenichi-mightiest-disciple-ryozanpaku" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/greatest-disciple-1.jpg" alt="Kenichi: The Mightiest Disciple — Ryozanpaku poster" loading="lazy"><span class="sku mono">SKU-118</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Kenichi: The Mightiest Disciple — Ryozanpaku</div>
-          <div class="poster-meta">
-            <span class="price">$27.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="kenichi-mightiest-disciple-ryozanpaku">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=kenichi-life-saving-fist" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/kenichi-1.jpg" alt="Kenichi: The Mightiest Disciple — The Life-Saving Fist poster" loading="lazy"><span class="sku mono">SKU-119</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Kenichi: The Mightiest Disciple — The Life-Saving Fist</div>
-          <div class="poster-meta">
-            <span class="price">$26.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="kenichi-life-saving-fist">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=kenichi-elders-of-ryozanpaku" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/senior-disciples-1.jpg" alt="Kenichi: The Mightiest Disciple — Elders of Ryozanpaku poster" loading="lazy"><span class="sku mono">SKU-120</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Kenichi: The Mightiest Disciple — Elders of Ryozanpaku</div>
-          <div class="poster-meta">
-            <span class="price">$27.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="kenichi-elders-of-ryozanpaku">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=kenichi-killing-fist" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/shoulders-of-giants-1.jpg" alt="Kenichi: The Mightiest Disciple — Killing Fist poster" loading="lazy"><span class="sku mono">SKU-121</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Kenichi: The Mightiest Disciple — Killing Fist</div>
-          <div class="poster-meta">
-            <span class="price">$27.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="kenichi-killing-fist">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=hardcore-leveling-warrior-formless-swordsmanship" class="poster-card viewframe" data-category="seinen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/hclw-eg-1.jpg" alt="Hardcore Leveling Warrior — Formless Swordsmanship poster" loading="lazy"><span class="sku mono">SKU-122</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Hardcore Leveling Warrior — Formless Swordsmanship</div>
-          <div class="poster-meta">
-            <span class="price">$28.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="hardcore-leveling-warrior-formless-swordsmanship">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=hardcore-leveling-warrior-original-op" class="poster-card viewframe" data-category="seinen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/hclw-1.jpg" alt="Hardcore Leveling Warrior — The Original OP Character poster" loading="lazy"><span class="sku mono">SKU-123</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Hardcore Leveling Warrior — The Original OP Character</div>
-          <div class="poster-meta">
-            <span class="price">$28.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="hardcore-leveling-warrior-original-op">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=hinomaru-sumo-waxing-moon" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/hinomaru-1.jpg" alt="Hinomaru Sumo — Waxing Moon poster" loading="lazy"><span class="sku mono">SKU-124</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Hinomaru Sumo — Waxing Moon</div>
-          <div class="poster-meta">
-            <span class="price">$27.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="hinomaru-sumo-waxing-moon">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=one-punch-man-saitama-mode" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/one-punch-man-1.jpg" alt="One Punch Man — Saitama Mode poster" loading="lazy"><span class="sku mono">SKU-125</span></div>
-        <div class="poster-body">
-          <div class="poster-title">One Punch Man — Saitama Mode</div>
-          <div class="poster-meta">
-            <span class="price">$28.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="one-punch-man-saitama-mode">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=solo-leveling-part-one-v1" class="poster-card viewframe" data-category="seinen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/solo-leveling-pt1-v1.jpg" alt="Solo Leveling — Part One poster" loading="lazy"><span class="sku mono">SKU-126</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Solo Leveling — Part One</div>
-          <div class="poster-meta">
-            <span class="price">$31.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="solo-leveling-part-one-v1">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=solo-leveling-part-one-v2" class="poster-card viewframe" data-category="seinen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/solo-leveling-pt1-v2.jpg" alt="Solo Leveling — Part One, Guild poster" loading="lazy"><span class="sku mono">SKU-127</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Solo Leveling — Part One, Guild</div>
-          <div class="poster-meta">
-            <span class="price">$31.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="solo-leveling-part-one-v2">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=sakamoto-days-cast" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/sakamoto-1.jpg" alt="Sakamoto Days — Cast Collage poster" loading="lazy"><span class="sku mono">SKU-128</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Sakamoto Days — Cast Collage</div>
-          <div class="poster-meta">
-            <span class="price">$29.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="sakamoto-days-cast">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=soul-eater-retrospective" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/soul-eater-2.jpg" alt="Soul Eater — Series Retrospective poster" loading="lazy"><span class="sku mono">SKU-129</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Soul Eater — Series Retrospective</div>
-          <div class="poster-meta">
-            <span class="price">$26.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="soul-eater-retrospective">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=tokyo-revengers-takemichi-hina" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/takehina-1.jpg" alt="Tokyo Revengers — Takemichi & Hina poster" loading="lazy"><span class="sku mono">SKU-130</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Tokyo Revengers — Takemichi & Hina</div>
-          <div class="poster-meta">
-            <span class="price">$28.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="tokyo-revengers-takemichi-hina">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=tokyo-revengers-winter-first-division" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/tr-winter-first-1.jpg" alt="Tokyo Revengers — Winter Arc, First Division poster" loading="lazy"><span class="sku mono">SKU-131</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Tokyo Revengers — Winter Arc, First Division</div>
-          <div class="poster-meta">
-            <span class="price">$27.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="tokyo-revengers-winter-first-division">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=tokyo-revengers-winter-black-dragons" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/tr-winter-secondo-1.jpg" alt="Tokyo Revengers — Winter Arc, Black Dragons poster" loading="lazy"><span class="sku mono">SKU-132</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Tokyo Revengers — Winter Arc, Black Dragons</div>
-          <div class="poster-meta">
-            <span class="price">$27.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="tokyo-revengers-winter-black-dragons">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="product.html?slug=tokyo-revengers-winter-save-hakkai" class="poster-card viewframe" data-category="shounen">
-        <span class="vf-tr"></span><span class="vf-bl"></span>
-        <div class="poster-art"><img class="poster-img" src="images/tr-winter-trente-1.jpg" alt="Tokyo Revengers — Winter Arc, Save Hakkai poster" loading="lazy"><span class="sku mono">SKU-133</span></div>
-        <div class="poster-body">
-          <div class="poster-title">Tokyo Revengers — Winter Arc, Save Hakkai</div>
-          <div class="poster-meta">
-            <span class="price">$27.00</span>
-            <button type="button" class="btn-add-mini" data-add-to-cart="tokyo-revengers-winter-save-hakkai">+ Cart</button>
-          </div>
-        </div>
-      </a>
-
+    <div style="display:flex; align-items:center; gap:20px;">
+      <div style="font-family:var(--font-display); font-size:var(--display-md); color:var(--paper-100);">$28.00</div>
+      <a href="product.html?slug=blue-lock-goal" class="btn accent">Shop This Print</a>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-        JSMANGA<span class="brand-accent">poster</span>
-      </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>Shop</h4>
-          <a href="shop.html">All posters</a>
-          <a href="commission.html">Commission a poster</a>
-        </div>
-        <div class="footer-col">
-          <h4>Read</h4>
-          <a href="reviews.html">Reviews</a>
-          <a href="about.html">About</a>
-        </div>
-        <div class="footer-col">
-          <h4>Info</h4>
-          <a href="about.html">Shipping</a>
-          <a href="about.html">Contact</a>
-        </div>
-      </div>
+<div class="section no-border" data-series-banner style="display:none; padding-bottom:0;">
+  <div style="display:flex; align-items:center; gap:16px; background:var(--paper-200); padding:16px 24px; border-bottom: var(--border-thin) solid var(--border-strong);">
+    <span class="mono" style="font-size:var(--text-3xs); text-transform:uppercase; letter-spacing:var(--tracking-wider); color:var(--text-muted);">Collection</span>
+    <span style="font-weight:var(--weight-bold); font-size:var(--text-sm);" data-series-label></span>
+    <a href="#" data-clear-series style="margin-left:auto; font-weight:var(--weight-bold); font-size:var(--text-xs); text-transform:uppercase; letter-spacing:0.5px;">Clear ×</a>
+  </div>
+</div>
+
+<section class="section no-border sticky-filter-bar" style="padding-top:24px; padding-bottom:24px; border-bottom: var(--border-thin) solid var(--border-strong);">
+  <div class="filter-bar" style="margin-bottom:0;">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="shounen">Shounen</button>
+      <button class="filter-btn" data-filter="seinen">Seinen</button>
+      <button class="filter-btn" data-filter="webtoon">Webtoon</button>
+      <button class="filter-btn" data-filter="non-manga">Non-Manga</button>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 JSMANGA. All posters are fan-made, original-design prints unless noted.</span>
-      <span>Made with a vector star.</span>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <input type="search" class="field-input" data-shop-search placeholder="Search prints or artists…" style="width:220px; border-radius:999px;">
+      <select class="sort-select" data-sort-select>
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="newest">Newest</option>
+      </select>
     </div>
+  </div>
+</section>
+
+<section class="section no-border">
+  <div class="grid" data-shop-grid></div>
+  <div data-load-more></div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-newsletter">
+    <div>
+      <div class="footer-newsletter-title">Get notified of new drops</div>
+      <div class="footer-newsletter-sub">No spam. Just prints. Unsubscribe anytime.</div>
+    </div>
+    <form data-newsletter-form class="footer-newsletter-form">
+      <input class="field-input" type="email" placeholder="you@email.com" required>
+      <button type="submit" class="btn accent">Sign up</button>
+    </form>
+  </div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Inkpanel Prints</div>
+      <p class="footer-blurb">Officially licensed manga art prints, printed and shipped from our studio.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All prints</a>
+      <a href="collections.html">Collections</a>
+      <a href="about.html#team">Artists</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="about.html#shipping">Shipping</a>
+      <a href="about.html#returns">Returns</a>
+      <a href="commission.html#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inkpanel Prints — All prints ship from our studio.</span>
   </div>
 </footer>
 

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which Panel Are You? — Inkpanel Prints</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Take the Ink Personality Test — find out which manga character, and which print, actually matches you.">
+<meta property="og:title" content="Which Panel Are You? — Inkpanel Prints">
+<meta property="og:description" content="Take the Ink Personality Test and get matched to a character and print.">
+<meta property="og:image" content="images/blue-lock.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <a href="index.html" class="nav-brand">Inkpanel Prints</a>
+  <button type="button" class="nav-toggle" aria-label="Toggle menu">Menu</button>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="quiz.html" class="active">Quiz</a>
+    <a href="collections.html">Collections</a>
+    <a href="commission.html">Commission</a>
+    <a href="about.html">About</a>
+  </nav>
+  <div class="nav-actions">
+    <div class="nav-search">
+      <input type="search" placeholder="Search posters…" data-search-input autocomplete="off">
+      <div class="search-results" data-search-results></div>
+    </div>
+    <a href="cart.html" class="cart-pill">Cart (<span class="cart-count">0</span>)</a>
+  </div>
+</header>
+
+<div data-quiz>
+
+  <div class="quiz-progress-wrap" data-quiz-progress-wrap style="display:none;">
+    <div class="quiz-progress-track"><div class="quiz-progress-bar" data-quiz-progress-bar></div></div>
+  </div>
+
+  <section class="quiz-shell" data-quiz-intro style="position:relative; overflow:hidden;">
+    <div class="quiz-silhouette-layer">
+      <div class="quiz-silhouette" style="top:-90px; right:-140px; width:420px; height:420px; background-color:var(--ink-900); opacity:0.06; -webkit-mask-image:url('images/reel-hxh.png'); mask-image:url('images/reel-hxh.png'); transform:rotate(-8deg);"></div>
+      <div class="quiz-silhouette" style="bottom:-160px; left:-180px; width:480px; height:480px; background-color:var(--red-600); opacity:0.07; -webkit-mask-image:url('images/reel-soul-eater.png'); mask-image:url('images/reel-soul-eater.png'); transform:rotate(6deg);"></div>
+      <div class="quiz-silhouette" style="top:4%; left:20px; width:200px; height:200px; background-color:var(--ink-900); opacity:0.05; -webkit-mask-image:url('images/reel-luffy.png'); mask-image:url('images/reel-luffy.png'); transform:rotate(10deg);"></div>
+      <div class="quiz-silhouette" style="bottom:-140px; right:-60px; width:360px; height:360px; background-color:var(--ink-900); opacity:0.05; -webkit-mask-image:url('images/reel-naruto.png'); mask-image:url('images/reel-naruto.png'); transform:rotate(-6deg);"></div>
+    </div>
+    <div class="quiz-content">
+      <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted);">7 Questions · The Ink Personality Test</div>
+      <h1 style="font-size:clamp(48px,9vw,120px); text-transform:uppercase; line-height:0.92; max-width:900px;">Which Panel Are You?</h1>
+      <div style="font-size:var(--text-md); color:var(--text-muted); max-width:480px;">Answer honestly. We'll read your type like a shounen villain reads a battle aura, then match you to the character — and the print — that's actually you.</div>
+      <button type="button" class="btn primary" data-quiz-start style="margin-top:8px;">Start The Test</button>
+    </div>
+  </section>
+
+  <section class="quiz-shell" data-quiz-question style="display:none;">
+    <div class="quiz-progress mono" data-quiz-step-label></div>
+    <h2 class="quiz-prompt" data-quiz-prompt></h2>
+    <div class="quiz-options" data-quiz-options></div>
+    <a href="#" class="mono" data-quiz-back style="margin-top:16px; font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted); visibility:hidden;">← Back</a>
+  </section>
+
+  <section class="quiz-shell" data-quiz-spinning style="display:none;">
+    <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted);">Revealing your match...</div>
+    <div class="quiz-flip-wrap">
+      <div class="quiz-flip-card" data-quiz-flip-card>
+        <div class="quiz-flip-face quiz-flip-front">
+          <div class="quiz-teaser" data-quiz-teaser></div>
+        </div>
+        <div class="quiz-flip-face quiz-flip-back">
+          <div class="mono" data-quiz-flip-genre></div>
+          <div class="quiz-flip-title" data-quiz-flip-title></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quiz-shell" data-quiz-result style="display:none;">
+    <div class="eyebrow">Your Match</div>
+    <h2 class="quiz-result-headline" data-quiz-headline></h2>
+    <div class="quiz-result-image" data-quiz-image></div>
+    <div class="badge" data-quiz-subtitle style="background:var(--gray-300); color:var(--ink-900);"></div>
+    <p class="quiz-result-desc" data-quiz-blurb></p>
+    <p class="prose" data-quiz-description style="border-top: var(--border-thin) solid var(--border-strong); padding-top:28px; margin-top:12px; max-width:640px;"></p>
+    <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:8px;">
+      <a href="shop.html" class="btn accent" data-quiz-shop-link>Shop The Print →</a>
+      <button type="button" class="btn secondary" data-quiz-share>Share Your Match</button>
+    </div>
+    <div class="mono" data-quiz-share-toast style="display:none; font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--red-600);">Copied to clipboard</div>
+    <a href="#" class="mono" data-quiz-restart style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted); margin-top:16px;">Retake the test</a>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-newsletter">
+    <div>
+      <div class="footer-newsletter-title">Get notified of new drops</div>
+      <div class="footer-newsletter-sub">No spam. Just prints. Unsubscribe anytime.</div>
+    </div>
+    <form data-newsletter-form class="footer-newsletter-form">
+      <input class="field-input" type="email" placeholder="you@email.com" required>
+      <button type="submit" class="btn accent">Sign up</button>
+    </form>
+  </div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Inkpanel Prints</div>
+      <p class="footer-blurb">Officially licensed manga art prints, printed and shipped from our studio.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All prints</a>
+      <a href="collections.html">Collections</a>
+      <a href="about.html#team">Artists</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="about.html#shipping">Shipping</a>
+      <a href="about.html#returns">Returns</a>
+      <a href="commission.html#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inkpanel Prints — All prints ship from our studio.</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

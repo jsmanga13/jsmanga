@@ -3,130 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Commission a Poster — JSMANGA</title>
+<title>Commissions — Inkpanel Prints</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Commission a custom manga-style illustration — original characters, fan art, or full-color splash-page recreations.">
+<meta property="og:title" content="Commissions — Inkpanel Prints">
+<meta property="og:description" content="Commission a custom manga-style illustration from our artists.">
+<meta property="og:image" content="images/soulll.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="wrap">
-    <a href="index.html" class="brand">
-      <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      JSMANGA<span class="brand-accent">poster</span>
-    </a>
-    <div class="navlinks">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="commission.html" class="active">Commission</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="about.html">About</a>
-    </div>
+<header class="site-nav">
+  <a href="index.html" class="nav-brand">Inkpanel Prints</a>
+  <button type="button" class="nav-toggle" aria-label="Toggle menu">Menu</button>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="collections.html">Collections</a>
+    <a href="commission.html" class="active">Commission</a>
+    <a href="about.html">About</a>
+  </nav>
+  <div class="nav-actions">
     <div class="nav-search">
       <input type="search" placeholder="Search posters…" data-search-input autocomplete="off">
       <div class="search-results" data-search-results></div>
     </div>
-    <a href="cart.html" class="nav-cta">
-      <span class="vheart"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-      <span class="cart-label">Cart (<span class="cart-count">0</span>)</span>
-    </a>
-  </div>
-</nav>
-
-<header class="page-hero">
-  <div class="wrap">
-    <span class="tag">Custom / Commission</span>
-    <h1>Get your own panel, framed.</h1>
+    <a href="cart.html" class="cart-pill">Cart (<span class="cart-count">0</span>)</a>
   </div>
 </header>
 
-<section class="section" style="border-bottom:none;">
-  <div class="wrap">
-    <div class="product-layout" style="align-items:start;">
-      <div class="prose">
-        <p>
-          Want a print that's not in the shop yet? Send over the series,
-          chapter, or exact panel you have in mind and we'll quote a
-          one-off reprint — same 200gsm matte archival stock as everything
-          else in the shop.
-        </p>
-        <p>
-          Commissions are reprints of existing panels and covers, not new
-          fan art commissioned from an artist — so turnaround is close to
-          a normal order once we track down a clean source file.
-        </p>
-        <div class="specs">
-          <div class="spec-row"><span>Turnaround</span><span class="mono">5–10 business days</span></div>
-          <div class="spec-row"><span>Sizes</span><span class="mono">18×24, 24×36, or custom</span></div>
-          <div class="spec-row"><span>Deposit</span><span class="mono">Not required to request a quote</span></div>
-        </div>
-      </div>
+<section class="section" style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;">
+  <div style="display:flex; flex-direction:column; gap:20px;">
+    <span class="eyebrow">Custom Commissions</span>
+    <h1 style="font-size:clamp(40px,6vw,88px); text-transform:uppercase; line-height:0.92;">Your Panel,<br>Hand-Drawn</h1>
+    <p class="prose">Commission a one-off illustration from our roster of licensed artists — your favorite scene, character, or original concept, printed the same archival way as the rest of the shop.</p>
+    <div class="stat-row" style="margin-top:8px;">
+      <div class="stat-block"><div class="stat-value">2–4 wks</div><div class="stat-label">Turnaround</div></div>
+      <div class="stat-block"><div class="stat-value">1:1</div><div class="stat-label">Artist review</div></div>
+      <div class="stat-block"><div class="stat-value">100%</div><div class="stat-label">Archival print</div></div>
+    </div>
+    <div class="slots-open-pill"><span class="slots-open-dot"></span><span class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase;">3 Slots Open This Month</span></div>
+  </div>
+  <img src="images/hero-1.jpg" alt="" style="width:100%; aspect-ratio:4/5; object-fit:cover; border: var(--border-thin) solid var(--border-strong);">
+</section>
 
-      <form data-commission-form>
-        <div class="field">
-          <label for="c-name">Name</label>
-          <input id="c-name" name="name" type="text" required>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="c-email">Email</label>
-            <input id="c-email" name="email" type="email" required>
-          </div>
-          <div class="field">
-            <label for="c-size">Size</label>
-            <select id="c-size" name="size">
-              <option value="18×24 in">18 × 24 in</option>
-              <option value="24×36 in">24 × 36 in</option>
-              <option value="Custom size">Custom size</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="c-reference">Series / character / scene</label>
-          <input id="c-reference" name="reference" type="text" placeholder="e.g. Blue Lock — Ch. 200 cover" required>
-        </div>
-        <div class="field">
-          <label for="c-budget">Budget (optional)</label>
-          <input id="c-budget" name="budget" type="text" placeholder="e.g. around $30">
-        </div>
-        <div class="field">
-          <label for="c-details">Details</label>
-          <textarea id="c-details" name="details" placeholder="Any specifics on the panel, color pass, or framing you want"></textarea>
-        </div>
-        <button type="submit" class="btn">Send commission request →</button>
-      </form>
+<section class="section inverse">
+  <h2 style="margin-bottom:36px;">How It Works</h2>
+  <div class="grid cols-3">
+    <div style="border: var(--border-thin) solid var(--border-inverse); padding:24px; display:flex; flex-direction:column; gap:10px;">
+      <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--gray-400);">Step 01</div>
+      <div style="font-family:var(--font-display); font-size:var(--display-xs);">Submit your idea</div>
+      <div style="font-size:var(--text-sm); opacity:0.8;">Share the scene, character, or series you want illustrated, plus any reference art.</div>
+    </div>
+    <div style="border: var(--border-thin) solid var(--border-inverse); padding:24px; display:flex; flex-direction:column; gap:10px;">
+      <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--gray-400);">Step 02</div>
+      <div style="font-family:var(--font-display); font-size:var(--display-xs);">Get a quote</div>
+      <div style="font-size:var(--text-sm); opacity:0.8;">An artist reviews your request and sends back pricing and a timeline within two business days.</div>
+    </div>
+    <div style="border: var(--border-thin) solid var(--border-inverse); padding:24px; display:flex; flex-direction:column; gap:10px;">
+      <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--gray-400);">Step 03</div>
+      <div style="font-family:var(--font-display); font-size:var(--display-xs);">Receive your print</div>
+      <div style="font-size:var(--text-sm); opacity:0.8;">Once approved, your piece is illustrated, giclée-printed, and shipped archival-ready.</div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="vheart filled"><svg viewBox="0 0 100 100"><path d="M50 4 L60.6 35.4 L93.8 35.8 L67.1 55.6 L77 87.2 L50 68 L23 87.2 L32.9 55.6 L6.2 35.8 L39.4 35.4 Z"/></svg></span>
-        JSMANGA<span class="brand-accent">poster</span>
-      </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>Shop</h4>
-          <a href="shop.html">All posters</a>
-          <a href="commission.html">Commission a poster</a>
-        </div>
-        <div class="footer-col">
-          <h4>Read</h4>
-          <a href="reviews.html">Reviews</a>
-          <a href="about.html">About</a>
-        </div>
-        <div class="footer-col">
-          <h4>Info</h4>
-          <a href="about.html">Shipping</a>
-          <a href="about.html">Contact</a>
-        </div>
+<section class="section" style="display:grid; grid-template-columns:1fr 1fr; gap:64px;">
+  <div style="display:flex; flex-direction:column; gap:8px; height:100%;">
+    <h2>Start A Request</h2>
+    <p class="prose">Tell us what you're picturing. We'll follow up with a quote and estimated timeline within two business days.</p>
+    <div style="display:flex; flex-direction:column; gap:12px; margin-top:28px;">
+      <div class="price-tier-row"><div><div class="price-tier-name">Sketch Commission</div><div class="price-tier-detail">Black &amp; white, single character</div></div><div class="price-tier-price">$120</div></div>
+      <div class="price-tier-row"><div><div class="price-tier-name">Full Color Illustration</div><div class="price-tier-detail">Full scene, full color</div></div><div class="price-tier-price">$280</div></div>
+      <div class="price-tier-row"><div><div class="price-tier-name">Splash Page Recreation</div><div class="price-tier-detail">Multi-panel, gallery scale</div></div><div class="price-tier-price">$450</div></div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:18px; margin-top:auto; padding-top:32px; border-top: var(--border-thin) solid var(--border-strong);">
+      <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted);">Or reach out directly</div>
+      <a href="mailto:commissions@inkpanelprints.com" style="font-family:var(--font-display); font-size:var(--display-xs); letter-spacing:0.5px; color:var(--text-primary); width:fit-content;">commissions@inkpanelprints.com</a>
+      <div class="social-row">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter / X"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-7.2L4.2 22H1l8.1-9.3L0.8 2h7.3l5 6.6L18.9 2zM17.6 20h1.9L6.5 3.9H4.5L17.6 20z"/></svg></a>
+        <a href="https://discord.com" target="_blank" rel="noopener" aria-label="Discord"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M20 5.5a17 17 0 0 0-4.3-1.3l-.2.4a15 15 0 0 1 3.8 1.3 16 16 0 0 0-14.6 0 15 15 0 0 1 3.8-1.3l-.2-.4A17 17 0 0 0 4 5.5C1.9 9 1.3 12.4 1.6 15.7a17 17 0 0 0 5.1 2.5l.7-1.1a10.6 10.6 0 0 1-1.7-.8l.4-.3a12 12 0 0 0 10 0l.4.3a10.6 10.6 0 0 1-1.7.8l.7 1.1a17 17 0 0 0 5.1-2.5c.4-3.8-.6-7.2-2.1-10.2zM8.7 13.8c-.7 0-1.3-.7-1.3-1.5s.6-1.5 1.3-1.5 1.4.7 1.3 1.5c0 .8-.6 1.5-1.3 1.5zm6.6 0c-.7 0-1.3-.7-1.3-1.5s.6-1.5 1.3-1.5 1.3.7 1.3 1.5-.6 1.5-1.3 1.5z"/></svg></a>
+        <a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.1c-.9-.8-1.4-2-1.4-3.1h-3.1v14.4c0 1.5-1.2 2.7-2.7 2.7s-2.7-1.2-2.7-2.7 1.2-2.7 2.7-2.7c.3 0 .6 0 .8.1V10.5a6 6 0 0 0-.8-.1c-3.2 0-5.8 2.6-5.8 5.8S6.2 22 9.4 22s5.8-2.6 5.8-5.8V8.9a7.6 7.6 0 0 0 4.4 1.4V7.2c-1 0-2.1-.4-3-1.1z"/></svg></a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 JSMANGA. All posters are fan-made, original-design prints unless noted.</span>
-      <span>Made with a vector star.</span>
+  </div>
+
+  <form data-commission-form style="display:flex; flex-direction:column;">
+    <div data-commission-success style="display:none; border: var(--border-thick) solid var(--border-strong); padding:32px; flex-direction:column; gap:12px;">
+      <div style="font-family:var(--font-display); font-size:var(--display-sm); letter-spacing:0.5px; text-transform:uppercase;">Request Sent</div>
+      <div style="font-size:var(--text-base); color:var(--text-body);">We'll be in touch at <span data-commission-success-email></span> within two business days with a quote.</div>
     </div>
+    <div data-commission-fields style="display:flex; flex-direction:column; gap:16px;">
+      <input class="field-input" type="text" name="name" placeholder="Name" required>
+      <input class="field-input" type="email" name="email" placeholder="Email" required>
+      <input class="field-input" type="text" name="series" placeholder="Series or character it's from" required>
+      <select class="field-select" name="tier">
+        <option value="sketch">Sketch Commission — $120</option>
+        <option value="color">Full Color Illustration — $280</option>
+        <option value="splash">Splash Page Recreation — $450</option>
+      </select>
+      <textarea class="field-textarea" name="description" placeholder="Describe the scene, character, or series you'd like illustrated"></textarea>
+      <label style="display:flex; align-items:flex-start; gap:10px; font-size:var(--text-xs); color:var(--text-muted); cursor:pointer;">
+        <input type="checkbox" name="agreed" style="margin-top:3px;">
+        I agree to the <a href="#commission-terms" style="color:var(--text-primary); text-decoration:underline;">commission terms</a> below and understand pieces are for personal use unless licensed.
+      </label>
+      <button type="submit" class="btn primary" data-commission-submit disabled>Send Request</button>
+    </div>
+  </form>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Recent Commissions</h2>
+    <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted);">Client work, shared with permission</div>
+  </div>
+  <div class="grid cols-4">
+    <div class="commission-gallery-item">
+      <div class="poster-frame"><img src="images/soulll.jpg" alt="Soul Eater commission"></div>
+      <div class="commission-gallery-caption">Soul Eater — full color, private client</div>
+    </div>
+    <div class="commission-gallery-item">
+      <div class="poster-frame"><img src="images/gl.jpg" alt="Gurren Lagann commission"></div>
+      <div class="commission-gallery-caption">Gurren Lagann — splash recreation</div>
+    </div>
+    <div class="commission-gallery-item">
+      <div class="poster-frame"><img src="images/blue-lock.jpg" alt="Blue Lock commission"></div>
+      <div class="commission-gallery-caption">Blue Lock — sketch commission</div>
+    </div>
+    <div class="commission-gallery-item">
+      <div class="poster-frame"><img src="images/sakamoto-1.jpg" alt="Sakamoto Days commission"></div>
+      <div class="commission-gallery-caption">Sakamoto Days — full color</div>
+    </div>
+  </div>
+</section>
+
+<section id="commission-terms" class="section">
+  <h2 style="margin-bottom:36px;">Commission Terms</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--red-600);">Will draw</div>
+      <div style="display:flex; gap:10px; font-size:var(--text-sm); color:var(--text-body);"><span style="color:var(--red-600); font-weight:var(--weight-bold);">＋</span>Original characters &amp; OCs</div>
+      <div style="display:flex; gap:10px; font-size:var(--text-sm); color:var(--text-body);"><span style="color:var(--red-600); font-weight:var(--weight-bold);">＋</span>Fan art of licensed manga/anime</div>
+      <div style="display:flex; gap:10px; font-size:var(--text-sm); color:var(--text-body);"><span style="color:var(--red-600); font-weight:var(--weight-bold);">＋</span>Full color or black &amp; white</div>
+      <div style="display:flex; gap:10px; font-size:var(--text-sm); color:var(--text-body);"><span style="color:var(--red-600); font-weight:var(--weight-bold);">＋</span>Splash-page recreations</div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted);">Won't draw</div>
+      <div style="display:flex; gap:10px; font-size:var(--text-sm); color:var(--text-body);"><span style="color:var(--text-muted); font-weight:var(--weight-bold);">－</span>NSFW or fetish content</div>
+      <div style="display:flex; gap:10px; font-size:var(--text-sm); color:var(--text-body);"><span style="color:var(--text-muted); font-weight:var(--weight-bold);">－</span>Hate symbols or real public figures</div>
+      <div style="display:flex; gap:10px; font-size:var(--text-sm); color:var(--text-body);"><span style="color:var(--text-muted); font-weight:var(--weight-bold);">－</span>Traced or AI-generated reference art</div>
+      <div style="display:flex; gap:10px; font-size:var(--text-sm); color:var(--text-body);"><span style="color:var(--text-muted); font-weight:var(--weight-bold);">－</span>Commercial/resale use without a license</div>
+    </div>
+  </div>
+</section>
+
+<section class="section inverse">
+  <h2 style="margin-bottom:36px;">What Clients Say</h2>
+  <div class="grid cols-3">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-quote">"Exactly the panel I described, down to the linework weight. Shipped faster than quoted."</div>
+      <div class="testimonial-author">J. Reyes — Repeat Client</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-quote">"Communication was clear at every stage. The print quality matches the shop originals perfectly."</div>
+      <div class="testimonial-author">M. Alders — First Commission</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-quote">"Worth every cent for a gift this personal. Framed it the day it arrived."</div>
+      <div class="testimonial-author">T. Okafor — Verified Buyer</div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <h2 style="margin-bottom:36px;">FAQ</h2>
+  <div style="max-width:760px;">
+    <div class="faq-item">
+      <button type="button" class="faq-q"><span>How long does a commission take?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Most pieces are completed in 2–4 weeks depending on tier and current queue. Rush turnaround is available on request.</div>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-q"><span>Can I request a specific artist?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Yes — mention their name in the description field and we'll confirm availability before starting your quote.</div>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-q"><span>What if I don't like the first draft?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Every commission includes one round of revisions after the initial sketch is approved, at no extra cost.</div>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-q"><span>Do you ship internationally?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Yes, worldwide. International orders include tracked, insured shipping at checkout.</div>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-q"><span>Can I use my commission commercially?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Commissions are for personal use and display. Reach out before your request for commercial licensing options.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-newsletter">
+    <div>
+      <div class="footer-newsletter-title">Get notified of new drops</div>
+      <div class="footer-newsletter-sub">No spam. Just prints. Unsubscribe anytime.</div>
+    </div>
+    <form data-newsletter-form class="footer-newsletter-form">
+      <input class="field-input" type="email" placeholder="you@email.com" required>
+      <button type="submit" class="btn accent">Sign up</button>
+    </form>
+  </div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Inkpanel Prints</div>
+      <p class="footer-blurb">Officially licensed manga art prints, printed and shipped from our studio.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All prints</a>
+      <a href="collections.html">Collections</a>
+      <a href="commission.html">Commissions</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="about.html#shipping">Shipping</a>
+      <a href="about.html#returns">Returns</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inkpanel Prints — All prints ship from our studio.</span>
   </div>
 </footer>
 
