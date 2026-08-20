@@ -21,7 +21,7 @@
   <nav class="nav-links">
     <a href="index.html">Home</a>
     <a href="shop.html">Shop</a>
-    <a href="quiz.html">Quiz</a>
+    <a href="quiz.html" class="nav-quiz-pill">Quiz<img src="images/quiz-mark.png" alt="" class="nav-quiz-mark"></a>
     <a href="collections.html">Collections</a>
     <a href="commission.html">Commission</a>
     <a href="about.html" class="active">About</a>
@@ -89,8 +89,8 @@
     <span class="eyebrow">Why Panelhouse</span>
     <div style="font-family:var(--font-display); font-size:clamp(28px,4vw,46px); line-height:1.12; letter-spacing:0.2px;">"Every print starts as a page someone loved enough to stop scrolling for. We track down the rights, source the highest-resolution art available, and run it through the same giclée process galleries use — nothing about it is a poster."</div>
     <div class="stat-row" style="margin-top:16px; justify-content:center;">
-      <div class="stat-block"><div class="stat-value">120+</div><div class="stat-label">Licensed titles</div></div>
-      <div class="stat-block"><div class="stat-value">40k</div><div class="stat-label">Prints shipped</div></div>
+      <div class="stat-block"><div class="stat-value">30+</div><div class="stat-label">Series Prints</div></div>
+      <div class="stat-block"><div class="stat-value">50</div><div class="stat-label">Prints shipped</div></div>
       <div class="stat-block"><div class="stat-value">100%</div><div class="stat-label">Archival stock</div></div>
     </div>
   </div>
@@ -99,19 +99,19 @@
 <section id="craft" class="section">
   <h2 style="margin-bottom:48px;">How Every Edition Is Made</h2>
   <div style="max-width:780px; margin:0 auto; display:flex; flex-direction:column;">
-    <div class="fade-up" style="display:grid; grid-template-columns:110px 1fr; gap:24px; padding:28px 0; border-top: var(--border-thin) solid var(--border-strong); animation-delay:0ms;">
+    <div class="fade-up process-row" style="display:grid; grid-template-columns:110px 1fr; gap:24px; padding:28px 0; border-top: var(--border-thin) solid var(--border-strong); animation-delay:0ms;">
       <div style="font-family:var(--font-display); font-size:var(--display-xs); color:var(--red-600);">01</div>
       <div><div style="font-family:var(--font-display); font-size:22px; text-transform:uppercase;">Source</div><p class="prose" style="margin-top:8px;">We license the panel directly from the mangaka or publisher — no scans, no fan reprints.</p></div>
     </div>
-    <div class="fade-up" style="display:grid; grid-template-columns:110px 1fr; gap:24px; padding:28px 0; border-top: var(--border-thin) solid var(--border-strong); animation-delay:60ms;">
+    <div class="fade-up process-row" style="display:grid; grid-template-columns:110px 1fr; gap:24px; padding:28px 0; border-top: var(--border-thin) solid var(--border-strong); animation-delay:60ms;">
       <div style="font-family:var(--font-display); font-size:var(--display-xs); color:var(--red-600);">02</div>
       <div><div style="font-family:var(--font-display); font-size:22px; text-transform:uppercase;">Restore</div><p class="prose" style="margin-top:8px;">Original art is cleaned and color-matched at full resolution before it ever touches a press.</p></div>
     </div>
-    <div class="fade-up" style="display:grid; grid-template-columns:110px 1fr; gap:24px; padding:28px 0; border-top: var(--border-thin) solid var(--border-strong); animation-delay:120ms;">
+    <div class="fade-up process-row" style="display:grid; grid-template-columns:110px 1fr; gap:24px; padding:28px 0; border-top: var(--border-thin) solid var(--border-strong); animation-delay:120ms;">
       <div style="font-family:var(--font-display); font-size:var(--display-xs); color:var(--red-600);">03</div>
       <div><div style="font-family:var(--font-display); font-size:22px; text-transform:uppercase;">Print</div><p class="prose" style="margin-top:8px;">Giclée printed on 100% cotton rag stock, the same process fine-art galleries use.</p></div>
     </div>
-    <div class="fade-up" style="display:grid; grid-template-columns:110px 1fr; gap:24px; padding:28px 0; border-top: var(--border-thin) solid var(--border-strong); animation-delay:180ms;">
+    <div class="fade-up process-row" style="display:grid; grid-template-columns:110px 1fr; gap:24px; padding:28px 0; border-top: var(--border-thin) solid var(--border-strong); animation-delay:180ms;">
       <div style="font-family:var(--font-display); font-size:var(--display-xs); color:var(--red-600);">04</div>
       <div><div style="font-family:var(--font-display); font-size:22px; text-transform:uppercase;">Number</div><p class="prose" style="margin-top:8px;">Each print is hand-numbered against its edition size and never reprinted once it sells out.</p></div>
     </div>
@@ -167,7 +167,7 @@
     <div style="font-size:var(--text-base); color:var(--text-muted); margin-top:6px;">No spam. Just prints. Unsubscribe anytime.</div>
   </div>
   <form data-newsletter-form style="display:flex; gap:12px; flex-wrap:wrap;">
-    <input class="field-input" type="email" placeholder="you@email.com" required style="width:280px;">
+    <input class="field-input" type="email" placeholder="you@email.com" required style="width:280px; border-radius:8px;">
     <button type="submit" class="btn accent">Sign up</button>
   </form>
 </section>

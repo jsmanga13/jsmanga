@@ -21,7 +21,7 @@
   <nav class="nav-links">
     <a href="index.html">Home</a>
     <a href="shop.html">Shop</a>
-    <a href="quiz.html">Quiz</a>
+    <a href="quiz.html" class="nav-quiz-pill">Quiz<img src="images/quiz-mark.png" alt="" class="nav-quiz-mark"></a>
     <a href="collections.html">Collections</a>
     <a href="commission.html" class="active">Commission</a>
     <a href="about.html">About</a>
@@ -35,7 +35,7 @@
   </div>
 </header>
 
-<section class="section" style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;">
+<section class="section hero-split" style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;">
   <div style="display:flex; flex-direction:column; gap:20px;">
     <span class="eyebrow">Custom Commissions</span>
     <h1 style="font-size:clamp(40px,6vw,88px); text-transform:uppercase; line-height:0.92;">Your Panel,<br>Hand-Drawn</h1>
@@ -71,14 +71,14 @@
   </div>
 </section>
 
-<section class="section" style="display:grid; grid-template-columns:1fr 1fr; gap:64px;">
+<section class="section two-col" style="display:grid; grid-template-columns:1fr 1fr; gap:64px;">
   <div style="display:flex; flex-direction:column; gap:8px; height:100%;">
     <h2>Start A Request</h2>
     <p class="prose">Tell us what you're picturing. We'll follow up with a quote and estimated timeline within two business days.</p>
     <div style="display:flex; flex-direction:column; gap:12px; margin-top:28px;">
-      <div class="price-tier-row"><div><div class="price-tier-name">Sketch Commission</div><div class="price-tier-detail">Black &amp; white, single character</div></div><div class="price-tier-price">$120</div></div>
-      <div class="price-tier-row"><div><div class="price-tier-name">Full Color Illustration</div><div class="price-tier-detail">Full scene, full color</div></div><div class="price-tier-price">$280</div></div>
-      <div class="price-tier-row"><div><div class="price-tier-name">Splash Page Recreation</div><div class="price-tier-detail">Multi-panel, gallery scale</div></div><div class="price-tier-price">$450</div></div>
+      <div class="price-tier-row"><div><div class="price-tier-name">Manga Only</div><div class="price-tier-detail">Black &amp; white, single character</div></div><div class="price-tier-price">$80</div></div>
+      <div class="price-tier-row"><div><div class="price-tier-name">Manga and Anime</div><div class="price-tier-detail">Full scene, full color</div></div><div class="price-tier-price">$120</div></div>
+      <div class="price-tier-row"><div><div class="price-tier-name">Splash Page Recreation</div><div class="price-tier-detail">Multi-panel, gallery scale</div></div><div class="price-tier-price">$180</div></div>
     </div>
     <div style="display:flex; flex-direction:column; gap:18px; margin-top:auto; padding-top:32px; border-top: var(--border-thin) solid var(--border-strong);">
       <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted);">Or reach out directly</div>
@@ -102,9 +102,9 @@
       <input class="field-input" type="email" name="email" placeholder="Email" required>
       <input class="field-input" type="text" name="series" placeholder="Series or character it's from" required>
       <select class="field-select" name="tier">
-        <option value="sketch">Sketch Commission — $120</option>
-        <option value="color">Full Color Illustration — $280</option>
-        <option value="splash">Splash Page Recreation — $450</option>
+        <option value="sketch">Manga Only — $80</option>
+        <option value="color">Manga and Anime — $120</option>
+        <option value="splash">Splash Page Recreation — $180</option>
       </select>
       <textarea class="field-textarea" name="description" placeholder="Describe the scene, character, or series you'd like illustrated"></textarea>
       <label style="display:flex; align-items:flex-start; gap:10px; font-size:var(--text-xs); color:var(--text-muted); cursor:pointer;">
@@ -143,7 +143,7 @@
 
 <section id="commission-terms" class="section">
   <h2 style="margin-bottom:36px;">Commission Terms</h2>
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
+  <div class="two-col" style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
     <div style="display:flex; flex-direction:column; gap:14px;">
       <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--red-600);">Will draw</div>
       <div style="display:flex; gap:10px; font-size:var(--text-sm); color:var(--text-body);"><span style="color:var(--red-600); font-weight:var(--weight-bold);">＋</span>Original characters &amp; OCs</div>

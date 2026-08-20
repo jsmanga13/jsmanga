@@ -6,6 +6,18 @@
       "runtimeExecutable": "powershell",
       "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\josg\\AppData\\Local\\Temp\\claude\\C--Users-josg-Documents-files-Website-Code\\b9b8e587-515a-4b34-ae9e-1f646177d121\\scratchpad\\serve.ps1"],
       "port": 8843
+    },
+    {
+      "name": "anime-battle-frontend",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\josg\\Documents\\files\\anime-battle-royale\\run-frontend.ps1"],
+      "port": 5173
+    },
+    {
+      "name": "anime-battle-backend",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\josg\\Documents\\files\\anime-battle-royale\\run-backend.ps1"],
+      "port": 8787
     }
   ]
 }
