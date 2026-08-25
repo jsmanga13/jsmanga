@@ -49,7 +49,7 @@ const PRODUCTS = [
 const CART_KEY = 'panelhouse_cart';
 const GENRE_LABELS = { shounen: 'Shounen', seinen: 'Seinen', webtoon: 'Webtoon', 'non-manga': 'Non-Manga' };
 const CHAR_POOL = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const FREE_SHIP_THRESHOLD = 150;
+const FREE_SHIP_THRESHOLD = 100;
 const SHOP_PAGE_SIZE = 12;
 
 const SIZE_OPTIONS = [
@@ -61,23 +61,26 @@ const SIZE_OPTIONS = [
 
 const SHIPPING_OPTIONS = [
   { value: 'free', label: 'Standard', detail: 'Free · 7–10 days' },
-  { value: 'express', label: 'Express', detail: '+$18 · 2–3 days' },
+  { value: 'express', label: 'Express', detail: '+$13 · 2–3 days' },
 ];
 
-const PRODUCT_REVIEWS = [
-  { stars: 5, title: 'Print quality is outstanding', body: 'Colors are richer than the reference image online. Framed it immediately — the paper stock really comes through under gallery lighting.', author: 'D. Marsh', date: 'Jun 2026' },
-  { stars: 5, title: 'Fast shipping, perfect condition', body: 'Arrived in a rigid tube with no bends or corner dings. A nice, no-fuss unboxing.', author: 'R. Iyer', date: 'May 2026' },
-  { stars: 4, title: 'Great print, sizing runs a bit tight', body: 'Love the piece, just double-check your frame depth — the mount adds a few extra millimeters.', author: 'S. Whitfield', date: 'May 2026' },
-  { stars: 5, title: 'Worth the wait', body: 'Ordered near a restock and it still felt like a considered purchase, not an impulse buy.', author: 'J. Okafor', date: 'Apr 2026' },
-];
-const RATING_BREAKDOWN = [
-  { stars: 5, count: 104, pct: 82 },
-  { stars: 4, count: 18, pct: 14 },
-  { stars: 3, count: 3, pct: 2 },
-  { stars: 2, count: 1, pct: 1 },
-  { stars: 1, count: 0, pct: 0 },
-];
 function starString(n) { return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n); }
+
+const REVIEWS_KEY = 'panelhouse_reviews';
+function getAllReviews() {
+  try { return JSON.parse(localStorage.getItem(REVIEWS_KEY)) || {}; }
+  catch { return {}; }
+}
+function getProductReviews(slug) {
+  const all = getAllReviews();
+  return all[slug] || [];
+}
+function addProductReview(slug, review) {
+  const all = getAllReviews();
+  if (!all[slug]) all[slug] = [];
+  all[slug].push(review);
+  localStorage.setItem(REVIEWS_KEY, JSON.stringify(all));
+}
 
 // About hero title scales down for longer words (shorter words render bigger).
 function titleFontSizeFor(title) {
@@ -512,33 +515,104 @@ function renderProductPage() {
     });
   }
 
-  // Reviews — rating breakdown + written reviews (same illustrative set across products).
-  document.querySelectorAll('[data-p-rating-avg]').forEach(el => { el.textContent = '4.8'; });
-  document.querySelectorAll('[data-p-rating-stars]').forEach(el => { el.textContent = starString(5); });
-  document.querySelectorAll('[data-p-review-count]').forEach(el => { el.textContent = String(PRODUCT_REVIEWS.length + 122); });
-  const breakdownMount = document.querySelector('[data-p-rating-breakdown]');
-  if (breakdownMount) {
-    breakdownMount.innerHTML = RATING_BREAKDOWN.map(b => `
-      <div class="rating-bar-row">
-        <span class="rating-bar-label">${b.stars}</span>
-        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:${b.pct}%;"></div></div>
-        <span class="rating-bar-count">${b.count}</span>
-      </div>
-    `).join('');
-  }
-  const reviewsMount = document.querySelector('[data-p-reviews]');
-  if (reviewsMount) {
-    reviewsMount.innerHTML = PRODUCT_REVIEWS.map(rv => `
-      <div class="product-review">
-        <div class="product-review-top">
-          <div class="product-review-stars">${starString(rv.stars)}</div>
-          <div class="mono product-review-date">${rv.date}</div>
+  // Reviews — real reviews only, stored per-product in localStorage. Starts empty.
+  function renderReviewsSection() {
+    const reviews = getProductReviews(product.slug);
+    const count = reviews.length;
+    const avg = count ? reviews.reduce((s, r) => s + r.stars, 0) / count : 0;
+    const avgStr = count ? avg.toFixed(1) : '';
+
+    document.querySelectorAll('[data-p-rating-avg]').forEach(el => { el.textContent = avgStr; });
+    document.querySelectorAll('[data-p-rating-stars]').forEach(el => { el.textContent = count ? starString(Math.round(avg)) : ''; });
+    document.querySelectorAll('[data-p-review-count]').forEach(el => { el.textContent = String(count); });
+
+    const ratingFilled = document.querySelector('[data-p-rating-filled]');
+    const ratingEmptyLink = document.querySelector('[data-p-rating-empty]');
+    if (ratingFilled) ratingFilled.style.display = count ? 'flex' : 'none';
+    if (ratingEmptyLink) ratingEmptyLink.style.display = count ? 'none' : 'inline';
+
+    const summary = document.querySelector('[data-p-rating-summary]');
+    const emptySummary = document.querySelector('[data-p-rating-empty-summary]');
+    if (summary) summary.style.display = count ? '' : 'none';
+    if (emptySummary) emptySummary.style.display = count ? 'none' : '';
+
+    const breakdownMount = document.querySelector('[data-p-rating-breakdown]');
+    if (breakdownMount) {
+      breakdownMount.innerHTML = [5, 4, 3, 2, 1].map(stars => {
+        const c = reviews.filter(r => r.stars === stars).length;
+        const pct = count ? Math.round((c / count) * 100) : 0;
+        return `
+        <div class="rating-bar-row">
+          <span class="rating-bar-label">${stars}</span>
+          <div class="rating-bar-track"><div class="rating-bar-fill" style="width:${pct}%;"></div></div>
+          <span class="rating-bar-count">${c}</span>
+        </div>`;
+      }).join('');
+    }
+
+    const reviewsMount = document.querySelector('[data-p-reviews]');
+    const reviewsEmpty = document.querySelector('[data-p-reviews-empty]');
+    if (reviewsEmpty) reviewsEmpty.style.display = count ? 'none' : '';
+    if (reviewsMount) {
+      reviewsMount.innerHTML = reviews.slice().reverse().map(rv => `
+        <div class="product-review">
+          <div class="product-review-top">
+            <div class="product-review-stars">${starString(rv.stars)}</div>
+            <div class="mono product-review-date">${rv.date}</div>
+          </div>
+          <div class="product-review-title">${rv.title}</div>
+          <div class="product-review-body">${rv.body}</div>
+          <div class="mono product-review-author">${rv.author} · Verified Buyer</div>
         </div>
-        <div class="product-review-title">${rv.title}</div>
-        <div class="product-review-body">${rv.body}</div>
-        <div class="mono product-review-author">${rv.author} · Verified Buyer</div>
-      </div>
-    `).join('');
+      `).join('');
+    }
+  }
+  renderReviewsSection();
+
+  const writeReviewBtn = document.querySelector('[data-p-write-review-btn]');
+  const reviewForm = document.querySelector('[data-p-review-form]');
+  const cancelReviewBtn = document.querySelector('[data-p-cancel-review]');
+  const starPicker = document.querySelector('[data-p-star-picker]');
+  let selectedStars = 5;
+  function renderStarPicker() {
+    if (!starPicker) return;
+    starPicker.innerHTML = [1, 2, 3, 4, 5].map(i => `<span data-star="${i}" style="cursor:pointer;">${i <= selectedStars ? '★' : '☆'}</span>`).join('');
+  }
+  renderStarPicker();
+  if (starPicker) {
+    starPicker.addEventListener('click', (e) => {
+      const star = e.target.closest('[data-star]');
+      if (!star) return;
+      selectedStars = Number(star.dataset.star);
+      renderStarPicker();
+    });
+  }
+  if (writeReviewBtn && reviewForm) {
+    writeReviewBtn.addEventListener('click', () => {
+      reviewForm.style.display = reviewForm.style.display === 'flex' ? 'none' : 'flex';
+    });
+  }
+  if (cancelReviewBtn && reviewForm) {
+    cancelReviewBtn.addEventListener('click', () => { reviewForm.style.display = 'none'; });
+  }
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const f = reviewForm.elements;
+      addProductReview(product.slug, {
+        stars: selectedStars,
+        title: f.title.value.trim(),
+        body: f.body.value.trim(),
+        author: f.name.value.trim() || 'Anonymous',
+        date: new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' }),
+      });
+      reviewForm.reset();
+      selectedStars = 5;
+      renderStarPicker();
+      reviewForm.style.display = 'none';
+      renderReviewsSection();
+      showToast('Review submitted');
+    });
   }
 
   const related = PRODUCTS
