@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orders — Panelhouse Studios</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="section" style="max-width:1100px;">
+  <h1 style="font-size:var(--display-md); margin-bottom:24px;">Orders</h1>
+
+  <div data-login-gate style="display:flex; flex-direction:column; gap:16px; max-width:360px;">
+    <input class="field-input" type="password" placeholder="Admin password" data-admin-password-input>
+    <button type="button" class="btn primary" data-admin-login-btn style="width:fit-content;">View Orders</button>
+    <div data-admin-error style="display:none; color:var(--red-600); font-size:var(--text-sm);"></div>
+  </div>
+
+  <div data-orders-view style="display:none;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+      <div class="mono" style="font-size:var(--text-3xs); letter-spacing:var(--tracking-wider); text-transform:uppercase; color:var(--text-muted);"><span data-order-count></span> orders</div>
+      <button type="button" class="btn secondary" data-refresh-orders>Refresh</button>
+    </div>
+    <div data-orders-list style="display:flex; flex-direction:column; gap:16px;"></div>
+  </div>
+</section>
+
+<script>
+(function () {
+  const passwordInput = document.querySelector('[data-admin-password-input]');
+  const loginBtn = document.querySelector('[data-admin-login-btn]');
+  const loginGate = document.querySelector('[data-login-gate]');
+  const ordersView = document.querySelector('[data-orders-view]');
+  const errorEl = document.querySelector('[data-admin-error]');
+  const listEl = document.querySelector('[data-orders-list]');
+  const countEl = document.querySelector('[data-order-count]');
+  const refreshBtn = document.querySelector('[data-refresh-orders]');
+
+  let adminPassword = sessionStorage.getItem('panelhouse_admin_pw') || '';
+
+  function escapeHtml(str) {
+    return String(str || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  function renderOrders(orders) {
+    countEl.textContent = orders.length;
+    if (orders.length === 0) {
+      listEl.innerHTML = '<div style="color:var(--text-muted);">No orders yet.</div>';
+      return;
+    }
+    listEl.innerHTML = orders.map((o) => `
+      <div style="border: var(--border-thin) solid var(--border-strong); padding:20px;">
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
+          <div>
+            <div style="font-weight:var(--weight-bold);">${escapeHtml(o.email || 'No email')}</div>
+            <div class="mono" style="font-size:var(--text-3xs); color:var(--text-muted);">${escapeHtml(o.id)} · ${new Date(o.createdAt).toLocaleString()}</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-weight:var(--weight-bold); color:var(--red-600);">$${Number(o.total).toFixed(2)}</div>
+            <div class="mono" style="font-size:var(--text-3xs); text-transform:uppercase; color:${o.status === 'shipped' ? 'var(--text-primary)' : 'var(--text-muted)'};">${escapeHtml(o.status)}</div>
+          </div>
+        </div>
+        <div style="font-size:var(--text-sm); color:var(--text-muted); margin-bottom:12px;">
+          ${o.items.map((i) => `${escapeHtml(i.quantity)}× ${escapeHtml(i.name)}`).join(', ')}
+        </div>
+        ${o.shippingAddress ? `<div style="font-size:var(--text-sm); color:var(--text-muted); margin-bottom:12px;">${escapeHtml([o.shippingAddress.line1, o.shippingAddress.line2, o.shippingAddress.city, o.shippingAddress.state, o.shippingAddress.postal_code].filter(Boolean).join(', '))}</div>` : ''}
+        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+          <input class="field-input" type="text" placeholder="Tracking number" value="${escapeHtml(o.trackingNumber)}" data-tracking-input style="width:220px;">
+          <button type="button" class="btn secondary" data-mark-shipped="${escapeHtml(o.id)}">${o.status === 'shipped' ? 'Update Tracking' : 'Mark Shipped'}</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  async function loadOrders() {
+    errorEl.style.display = 'none';
+    try {
+      const res = await fetch('/.netlify/functions/list-orders', {
+        headers: { 'x-admin-password': adminPassword },
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Could not load orders.');
+      loginGate.style.display = 'none';
+      ordersView.style.display = 'block';
+      renderOrders(data.orders);
+    } catch (err) {
+      errorEl.textContent = err.message;
+      errorEl.style.display = '';
+      sessionStorage.removeItem('panelhouse_admin_pw');
+    }
+  }
+
+  loginBtn.addEventListener('click', () => {
+    adminPassword = passwordInput.value;
+    sessionStorage.setItem('panelhouse_admin_pw', adminPassword);
+    loadOrders();
+  });
+
+  passwordInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') loginBtn.click();
+  });
+
+  refreshBtn.addEventListener('click', loadOrders);
+
+  listEl.addEventListener('click', async (e) => {
+    const btn = e.target.closest('[data-mark-shipped]');
+    if (!btn) return;
+    const orderId = btn.dataset.markShipped;
+    const trackingInput = btn.closest('div').querySelector('[data-tracking-input]');
+    btn.disabled = true;
+    try {
+      const res = await fetch('/.netlify/functions/update-order-status', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-admin-password': adminPassword },
+        body: JSON.stringify({ orderId, status: 'shipped', trackingNumber: trackingInput.value }),
+      });
+      if (!res.ok) throw new Error('Could not update order.');
+      loadOrders();
+    } catch (err) {
+      alert(err.message);
+      btn.disabled = false;
+    }
+  });
+
+  if (adminPassword) loadOrders();
+})();
+</script>
+
+</body>
+</html>
