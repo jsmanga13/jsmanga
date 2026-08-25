@@ -84,20 +84,16 @@
 
   <section class="section no-border" data-cart-step-payment style="display:none;">
     <div class="cart-layout">
-      <form data-cart-payment-form style="display:flex; flex-direction:column; gap:16px; max-width:560px;">
+      <div style="display:flex; flex-direction:column; gap:16px; max-width:560px;">
         <div style="font-family:var(--font-display); font-size:var(--display-sm); letter-spacing:0.5px; text-transform:uppercase; margin-bottom:8px;">Payment</div>
-        <input class="field-input" name="name" type="text" placeholder="Name on card" required>
-        <input class="field-input" name="number" type="text" placeholder="Card number" required>
-        <div class="field-row">
-          <input class="field-input" name="expiry" type="text" placeholder="MM / YY" required>
-          <input class="field-input" name="cvc" type="text" placeholder="CVC" required>
-        </div>
+        <p class="prose" style="max-width:none;">Card details are entered on Stripe's secure checkout page — we never see or store your card number.</p>
         <div class="mono" style="font-size:var(--text-3xs); color:var(--text-muted); letter-spacing:0.5px;" data-cart-ship-to></div>
+        <div data-cart-payment-error style="display:none; color:var(--red-600); font-size:var(--text-sm);"></div>
         <div style="display:flex; gap:16px; margin-top:12px;">
           <button type="button" class="btn secondary" data-cart-back-to-shipping>Back</button>
-          <button type="submit" class="btn accent">Place Order</button>
+          <button type="button" class="btn accent" data-cart-pay-btn>Continue To Secure Payment</button>
         </div>
-      </form>
+      </div>
       <div class="cart-summary" data-cart-summary-mini></div>
     </div>
   </section>

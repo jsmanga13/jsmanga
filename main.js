@@ -627,7 +627,6 @@ function renderProductPage() {
 const CART_STEPS = ['cart', 'shipping', 'payment', 'confirmation'];
 let cartStep = 'cart';
 let cartShipping = { name: '', email: '', address: '', city: '', state: '', zip: '', country: '' };
-let cartPayment = { name: '', number: '', expiry: '', cvc: '' };
 let cartOrderNumber = '';
 
 function cartTotals() {
@@ -780,17 +779,43 @@ function initCartCheckout() {
     });
   }
 
-  const paymentForm = root.querySelector('[data-cart-payment-form]');
-  if (paymentForm) {
-    paymentForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const f = paymentForm.elements;
-      cartPayment = { name: f.name.value, number: f.number.value, expiry: f.expiry.value, cvc: f.cvc.value };
-      cartOrderNumber = 'IP-' + Math.floor(100000 + Math.random() * 900000);
-      cartStep = 'confirmation';
-      saveCart([]);
-      renderCartPage();
+  const payBtn = root.querySelector('[data-cart-pay-btn]');
+  if (payBtn) {
+    payBtn.addEventListener('click', async () => {
+      const errorEl = root.querySelector('[data-cart-payment-error]');
+      if (errorEl) errorEl.style.display = 'none';
+      payBtn.disabled = true;
+      payBtn.textContent = 'Redirecting…';
+      try {
+        const { items, shipping } = cartTotals();
+        const res = await fetch('/.netlify/functions/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            cart: items.map(i => ({ slug: i.slug, title: i.product.title, price: i.unitPrice, qty: i.qty, size: i.size })),
+            shippingCost: shipping,
+            customerEmail: cartShipping.email,
+          }),
+        });
+        if (!res.ok) throw new Error('Could not start checkout. Please try again.');
+        const { url } = await res.json();
+        if (!url) throw new Error('Could not start checkout. Please try again.');
+        window.location.href = url;
+      } catch (err) {
+        payBtn.disabled = false;
+        payBtn.textContent = 'Continue To Secure Payment';
+        if (errorEl) { errorEl.textContent = err.message; errorEl.style.display = ''; }
+      }
     });
+  }
+
+  const params = new URLSearchParams(location.search);
+  if (params.get('success') === 'true') {
+    cartOrderNumber = params.get('session_id') ? params.get('session_id').slice(-8).toUpperCase() : '';
+    cartStep = 'confirmation';
+    saveCart([]);
+    renderCartPage();
+    history.replaceState({}, '', location.pathname);
   }
 }
 

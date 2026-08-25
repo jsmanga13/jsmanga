@@ -1,0 +1,9 @@
+{
+  "name": "panelhouse-studios",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Panelhouse Studios storefront (static site + Netlify Functions for Stripe checkout).",
+  "dependencies": {
+    "stripe": "^17.4.0"
+  }
+}
