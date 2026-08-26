@@ -111,7 +111,12 @@ h1, h2, h3 {
   font-size: var(--display-xs);
   letter-spacing: 1px;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
+
+.nav-brand-mark { height: 64px; width: auto; display: block; }
 
 .nav-links {
   display: flex;
