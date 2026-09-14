@@ -4,7 +4,7 @@
     {
       "name": "inkpanel-static",
       "runtimeExecutable": "powershell",
-      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\josg\\AppData\\Local\\Temp\\claude\\C--Users-josg-Documents-files-Website-Code\\b9b8e587-515a-4b34-ae9e-1f646177d121\\scratchpad\\serve.ps1"],
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\josg\\AppData\\Local\\Temp\\claude\\C--Users-josg-Documents-files-Website-Code\\b25db7ec-96a2-4bc3-b7f3-cffcc7911992\\scratchpad\\serve.ps1"],
       "port": 8843
     },
     {
