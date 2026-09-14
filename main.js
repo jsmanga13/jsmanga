@@ -644,9 +644,8 @@ function cartTotals() {
     .filter(i => i.product);
   const subtotal = items.reduce((sum, i) => sum + i.unitPrice * i.qty, 0);
   const shipping = items.length === 0 ? 0 : (subtotal >= FREE_SHIP_THRESHOLD ? 0 : 6.00);
-  const tax = Math.round(subtotal * 0.08 * 100) / 100;
-  const total = subtotal + shipping + tax;
-  return { items, subtotal, shipping, tax, total };
+  const total = subtotal + shipping;
+  return { items, subtotal, shipping, total };
 }
 
 function renderCartPage() {
@@ -662,7 +661,7 @@ function renderCartPage() {
   const titleEl = root.querySelector('[data-cart-title]');
   const itemCountEl = root.querySelector('[data-cart-item-count]');
 
-  const { items, subtotal, shipping, tax, total } = cartTotals();
+  const { items, subtotal, shipping, total } = cartTotals();
 
   [cartSection, shippingSection, paymentSection, confirmSection, emptyMount].forEach(el => { if (el) el.style.display = 'none'; });
   if (stepsMount) stepsMount.style.display = cartStep === 'confirmation' || items.length === 0 ? 'none' : '';
@@ -729,7 +728,7 @@ function renderCartPage() {
       ` : ''}
       <div class="cart-summary-row"><span>Subtotal</span><span>$${subtotal.toFixed(2)}</span></div>
       <div class="cart-summary-row"><span>Shipping</span><span>${shipping === 0 ? 'Free' : '$' + shipping.toFixed(2)}</span></div>
-      <div class="cart-summary-row"><span>Estimated Tax</span><span>$${tax.toFixed(2)}</span></div>
+      <div class="cart-summary-row"><span>Tax</span><span>Calculated at checkout</span></div>
       <div class="cart-summary-total"><span>Total</span><span>$${total.toFixed(2)}</span></div>
       <button type="button" class="btn accent" data-checkout style="width:100%;">Checkout</button>
       <div class="cart-note">Printed to order on 200gsm matte archival stock</div>
@@ -747,7 +746,7 @@ function renderCartPage() {
       <div class="cart-summary-title">Order Summary</div>
       <div class="cart-summary-row"><span>Subtotal</span><span>$${subtotal.toFixed(2)}</span></div>
       <div class="cart-summary-row"><span>Shipping</span><span>${shipping === 0 ? 'Free' : '$' + shipping.toFixed(2)}</span></div>
-      <div class="cart-summary-row"><span>Estimated Tax</span><span>$${tax.toFixed(2)}</span></div>
+      <div class="cart-summary-row"><span>Tax</span><span>Calculated at checkout</span></div>
       <div class="cart-summary-total"><span>Total</span><span>$${total.toFixed(2)}</span></div>
     `;
     paymentSection.querySelector('[data-cart-ship-to]').textContent = `Shipping to: ${cartShipping.address}, ${cartShipping.city}, ${cartShipping.state} ${cartShipping.zip}`;

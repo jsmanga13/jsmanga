@@ -31,6 +31,7 @@ exports.handler = async (event) => {
           currency: 'usd',
           product_data: { name: `${item.title || item.slug}${item.size ? ' — ' + item.size : ''}` },
           unit_amount: Math.round(price * 100),
+          tax_behavior: 'exclusive',
         },
         quantity: qty,
       };
@@ -42,6 +43,7 @@ exports.handler = async (event) => {
           currency: 'usd',
           product_data: { name: 'Shipping' },
           unit_amount: Math.round(shippingCost * 100),
+          tax_behavior: 'exclusive',
         },
         quantity: 1,
       });
@@ -55,6 +57,7 @@ exports.handler = async (event) => {
       line_items,
       customer_email: body.customerEmail || undefined,
       shipping_address_collection: { allowed_countries: ['US', 'CA'] },
+      automatic_tax: { enabled: true },
       success_url: `${siteUrl}/cart.html?success=true&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/cart.html?canceled=true`,
     });
